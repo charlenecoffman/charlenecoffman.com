@@ -1,4 +1,4 @@
-##charlenecoffman.com
+## charlenecoffman.com
 
 This is my personal website used to describe myself as a software developer. I recently re-wrote the site into a React app and am using AWS to host it in an S3 bucket.
 
