@@ -1,0 +1,45 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deployToLive:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Build and Test
+        run: |
+          npm install
+          npm run-script build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: artifactFromBuild
+          path: build
+      - name: S3 Cleanout
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+        run: |
+          aws s3 rm \
+            s3://charlenecoffman.com \
+            --recursive
+      - name: S3 Deploys
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+        run: |
+          aws s3 cp \
+            --recursive \
+            --acl public-read \
+            --region us-east-1 \
+            ./build s3://charlenecoffman.com
