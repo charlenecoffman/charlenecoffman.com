@@ -50,7 +50,7 @@ const SplashSection: React.FC<ISplashSection> = (props: ISplashSection) => {
       <Grid item xs={12} className={classes.largeImageBackground}>
         <Grid container className={classes.largeImageFilm}>
           <Grid item xs={12}>
-            <Grid container direction="column" justify="flex-end" alignItems="center" spacing={2} className={classes.outterContainerForWords}>
+            <Grid container direction="column" justifyContent="flex-end" alignItems="center" spacing={2} className={classes.outterContainerForWords}>
               {" "}
               <Grid item xs={12} key="myname" className={classes.myName}>
                 Charlene Coffman

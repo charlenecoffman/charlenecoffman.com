@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>
       textDecoration: "none",
       color: "inherit",
     },
+    link: {
+      cursor: "pointer",
+    },
     hideOnMobile: {
       [theme.breakpoints.down("sm")]: {
         display: "none",
@@ -39,9 +42,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     largeFont: {
       fontSize: 26,
-      // "&:hover": {
-      //   color: "#00CCCC",
-      // },
     },
     smallFont: {
       fontSize: 14,
@@ -126,7 +126,7 @@ export default function Navbar() {
                         return (
                           <Grid item key={menuItem.name} xs={1} onMouseLeave={handleClose} className={getClass(menuItem.name)}>
                             <Grid item onMouseEnter={handleClick}>
-                              <Typography align="center" className={classes.smallFont}>
+                              <Typography align="center" className={classes.smallFont + " " + classes.link}>
                                 {menuItem.name}
                               </Typography>
                             </Grid>

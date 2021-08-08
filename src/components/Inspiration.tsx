@@ -51,13 +51,13 @@ const useStyles = makeStyles((theme: Theme) =>
     ViewMoreButton: {
       fontFamily: ["Roboto", "sans-serif"].join(","),
       fontSize: 14,
-      backgroundColor: "#00CCCC",
+      backgroundColor: theme.palette.secondary.dark,
       color: "#FFFAFA",
     },
     ViewMoreContainer: {
       overflow: "hidden",
       paddingTop: "1em",
-      borderBottom: "1px solid #00CCCC",
+      borderBottom: `1px solid ${theme.palette.secondary.dark}`,
       "&:hover": { cursor: "pointer" },
     },
   }),

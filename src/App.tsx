@@ -15,8 +15,8 @@ const theme = createTheme({
     secondary: {
       main: "#FFFAFA",
       contrastText: "#c4c4c4",
+      dark: "#00CCCC",
     },
-    // warning: {},
   },
   typography: {
     fontFamily: "Uchen-Regular",
