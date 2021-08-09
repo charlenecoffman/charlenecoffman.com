@@ -6,6 +6,7 @@ import LastModifiedDateStore from "../../stores/LastModifiedDateStore";
 import XkcdStore from "../../stores/XkcdStore";
 import PoemStore from "../../stores/PoemStore";
 import Poem from "../../models/Poem";
+import PoemContainer from "../PoemContainer";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "center",
     },
     greyBackground: {
-      backgroundColor: "#26272B",
+      backgroundColor: theme.palette.primary.dark,
       color: "#FFFFFF",
       height: "35em",
     },
@@ -174,24 +175,7 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
             <Grid item xs={12} className={classes.littleTitles}>
               Daily Poem
             </Grid>
-            {poem && poem.lines && (
-              <React.Fragment>
-                <Grid item xs={12} style={{ fontStyle: "italic" }}>
-                  {poem.title}
-                </Grid>
-                {poem.lines.map((line, i) => {
-                  return (
-                    <Grid item xs={12} key={poem.author + i}>
-                      {line}
-                    </Grid>
-                  );
-                })}
-
-                <Grid item xs={12}>
-                  By {poem.author}
-                </Grid>
-              </React.Fragment>
-            )}
+            {poem && poem.lines && <PoemContainer title={poem.title} author={poem.author} lines={poem.lines} />}
           </Grid>
         </Grid>
       </Grid>

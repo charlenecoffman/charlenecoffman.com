@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "35em",
     },
     greyBackground: {
-      backgroundColor: "#26272B",
+      backgroundColor: theme.palette.primary.dark,
       color: "#FFFFFF",
     },
     WordsSquare: {

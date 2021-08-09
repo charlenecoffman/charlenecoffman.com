@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import MainNavBar from "./components/navbar/MainNavBar";
 import MainPage from "./components/MainPage";
+import Resume from "./components/Resume";
+import RouteWithNavBar from "./components/RouteWithNavBar";
 import BottomSection from "./components/footer/BottomSection";
 
 const theme = createTheme({
@@ -11,6 +13,7 @@ const theme = createTheme({
     primary: {
       main: "#797979",
       contrastText: "#FFFAFA",
+      dark: "#26272B",
     },
     secondary: {
       main: "#FFFAFA",
@@ -43,6 +46,9 @@ function App() {
               <Route exact path="/">
                 <MainPage />
               </Route>
+              <RouteWithNavBar path="/resume">
+                <Resume />
+              </RouteWithNavBar>
             </Switch>
             <BottomSection />
           </ThemeProvider>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { createStyles, Grid, makeStyles, Theme, Typography, Slide } from "@material-ui/core";
-import { FaSpotify } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa";
-import { FaBook } from "react-icons/fa";
+import { FaSpotify, FaUsers, FaBook } from "react-icons/fa";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
