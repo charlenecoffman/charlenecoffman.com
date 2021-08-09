@@ -65,6 +65,8 @@ export default class PoemStore implements IPoemStore {
   };
 
   private GetTenCountUrl = (): string => {
-    return "https://poetrydb.org/linecount/10";
+    //I changed it to get any poem from 2 - 12 lines
+    var lineCuunt = Math.floor(Math.random() * 10) + 2;
+    return "https://poetrydb.org/linecount/" + lineCuunt;
   };
 }
