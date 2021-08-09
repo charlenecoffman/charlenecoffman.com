@@ -3,10 +3,14 @@ import { createTheme, Grid, ThemeProvider } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import MainNavBar from "./components/navbar/MainNavBar";
+import SocialLinks from "./components/SocialLinks";
 import MainPage from "./components/MainPage";
 import Resume from "./components/Resume";
 import RouteWithNavBar from "./components/RouteWithNavBar";
 import BottomSection from "./components/footer/BottomSection";
+import FizzBuzz from "./components/FizzBuzz";
+import Palindrome from "./components/Palindrome";
+import CountOccurances from "./components/CountOccurances";
 
 const theme = createTheme({
   palette: {
@@ -41,6 +45,7 @@ function App() {
       <Grid item xs={12}>
         <Router>
           <ThemeProvider theme={theme}>
+            <SocialLinks />
             <MainNavBar />
             <Switch>
               <Route exact path="/">
@@ -48,6 +53,15 @@ function App() {
               </Route>
               <RouteWithNavBar path="/resume">
                 <Resume />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/fizzbuzz">
+                <FizzBuzz />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/palindrome">
+                <Palindrome />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/countoccur">
+                <CountOccurances />
               </RouteWithNavBar>
             </Switch>
             <BottomSection />

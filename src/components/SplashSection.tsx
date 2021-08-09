@@ -28,16 +28,16 @@ const useStyles = makeStyles((theme: Theme) =>
       left: 0,
       width: "100%",
       [theme.breakpoints.only("xs")]: {
-        height: "30em",
+        height: "31.4em",
       },
       [theme.breakpoints.only("sm")]: {
-        height: "27em",
+        height: "28.4em",
       },
       [theme.breakpoints.only("md")]: {
-        height: "36em",
+        height: "37.4em",
       },
       [theme.breakpoints.up("lg")]: {
-        height: "43em",
+        height: "44.4em",
       },
     },
     outterContainerForWords: {

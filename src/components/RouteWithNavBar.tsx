@@ -6,7 +6,12 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     NavBarBackground: {
       width: "100%",
-      height: "3em",
+      [theme.breakpoints.down("sm")]: {
+        height: "3em",
+      },
+      [theme.breakpoints.up("md")]: {
+        height: "6em",
+      },
       backgroundColor: theme.palette.primary.dark,
     },
   }),
