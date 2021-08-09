@@ -35,7 +35,7 @@ const CodeExample: React.FC<ICodeExample> = (props: ICodeExample) => {
   const classes = useStyles();
   return (
     <Grid container justifyContent="center" alignItems="flex-start" className={classes.Main}>
-      <Grid item xl={2}>
+      <Grid item xs={12} xl={2}>
         <Grid container className={classes.TitleSection}>
           <Grid item xl={12} className={classes.TitleIcon}>
             <BiCodeAlt />
@@ -45,14 +45,12 @@ const CodeExample: React.FC<ICodeExample> = (props: ICodeExample) => {
           </Grid>
         </Grid>
       </Grid>
-
-      <Grid item xl={5}>
+      <Grid item xs={12} xl={5}>
         <Grid container>
-          <Grid item xl={12}>
+          <Grid item xs={12} xl={12}>
             {props.description}
           </Grid>
-
-          <Grid item xl={12}>
+          <Grid item xs={12} xl={12}>
             <iframe title={props.name} width="100%" height="475" src={props.iframeCodeUrl} frameBorder="0"></iframe>
           </Grid>
         </Grid>

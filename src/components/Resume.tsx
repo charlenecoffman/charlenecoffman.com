@@ -25,8 +25,16 @@ const useStyles = makeStyles((theme: Theme) =>
     ContactInfo: {
       padding: "1em",
     },
-    Leftpane: {
-      paddingTop: "10em",
+    MoveItDown: {
+      [theme.breakpoints.down("xs")]: {
+        paddingTop: "2em",
+      },
+      [theme.breakpoints.only("sm")]: {
+        paddingTop: "5em",
+      },
+      [theme.breakpoints.up("md")]: {
+        paddingTop: "10em",
+      },
     },
     TopPadding: {
       paddingTop: "2em",
@@ -35,9 +43,6 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 22,
       fontFamily: "Uchen-Regular",
       textTransform: "uppercase",
-    },
-    WorkSection: {
-      paddingTop: "10em",
     },
     FirstWorkExperience: {
       padding: "1em",
@@ -58,8 +63,8 @@ const Resume: React.FC<IResume> = (props: IResume) => {
   const classes = useStyles();
   return (
     <Grid container className={classes.Main} direction="row" justifyContent="center" alignItems="flex-start">
-      <Grid item xs={2} key="leftpane">
-        <Grid container className={classes.Leftpane}>
+      <Grid item xs={12} sm={4} md={4} lg={3} xl={2} key="leftpane">
+        <Grid container className={classes.MoveItDown}>
           <Grid item xs={12} key="picture">
             <Grid container>
               <Grid item xs={7} className={classes.Photo}></Grid>
@@ -105,8 +110,8 @@ const Resume: React.FC<IResume> = (props: IResume) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={6} key="rightpane">
-        <Grid container className={classes.WorkSection}>
+      <Grid item xs={12} sm={7} md={8} lg={7} xl={6} key="rightpane">
+        <Grid container className={classes.MoveItDown}>
           <Grid item xs={12} key="AboutMe" className={classes.MainTitle}>
             About Me
           </Grid>
