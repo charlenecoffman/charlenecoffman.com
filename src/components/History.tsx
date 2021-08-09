@@ -16,17 +16,34 @@ const useStyles = makeStyles((theme: Theme) =>
       textTransform: "uppercase",
     },
     backgroundImage: {
-      backgroundImage: `url(${mushrooms})`,
-      backgroundSize: "100%",
-      height: "35em",
+      [theme.breakpoints.up("sm")]: {
+        backgroundImage: `url(${mushrooms})`,
+        backgroundSize: "cover",
+      },
+      [theme.breakpoints.only("sm")]: {
+        height: "27em",
+      },
+      [theme.breakpoints.only("md")]: {
+        height: "45em",
+      },
+      [theme.breakpoints.up("lg")]: {
+        height: "35em",
+      },
+      backgroundRepeat: "no-repeat",
     },
     greyBackground: {
       backgroundColor: theme.palette.primary.dark,
       color: "#FFFFFF",
     },
     WordsSquare: {
-      paddingLeft: "3em",
-      paddingRight: "3em",
+      [theme.breakpoints.down("md")]: {
+        paddingLeft: "1em",
+        paddingRight: "1em",
+      },
+      [theme.breakpoints.up("lg")]: {
+        paddingLeft: "3em",
+        paddingRight: "3em",
+      },
     },
     EachOutterContainer: {
       fontFamily: ["Roboto", "sans-serif"].join(","),
@@ -51,8 +68,8 @@ const History: React.FC<IHistory> = (props: IHistory) => {
     <Grid container justifyContent="center" alignItems="center" className={classes.greyBackground}>
       <Grid item xs={12} key="innerSection">
         <Grid container justifyContent="center" alignItems="center">
-          <Grid item xs={3} key="treeimage" className={classes.backgroundImage}></Grid>
-          <Grid item xs={3} className={classes.WordsSquare}>
+          <Grid item xl={3} lg={4} md={5} sm={6} xs={12} key="treeimage" className={classes.backgroundImage}></Grid>
+          <Grid item xl={3} lg={4} md={5} sm={6} xs={12} className={classes.WordsSquare}>
             <Grid container justifyContent="center" alignItems="center">
               <Grid item xs={12} key="title" className={classes.myTitle}>
                 A History

@@ -1,17 +1,44 @@
 import React from "react";
-import { createStyles, Grid, makeStyles, Theme, Button, Typography } from "@material-ui/core";
+import { createStyles, Grid, makeStyles, Theme, Button, Typography, useTheme, useMediaQuery } from "@material-ui/core";
 import lilypadsandflowers from "../images/lilypadsandflowers.jpg";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    largeImageBackground: { backgroundImage: `url(${lilypadsandflowers})`, backgroundSize: "100%", height: "43em" },
+    largeImageBackground: {
+      backgroundImage: `url(${lilypadsandflowers})`,
+      backgroundSize: "cover",
+      [theme.breakpoints.only("xs")]: {
+        height: "30em",
+      },
+      [theme.breakpoints.only("sm")]: {
+        height: "27em",
+      },
+      [theme.breakpoints.only("md")]: {
+        height: "36em",
+      },
+      [theme.breakpoints.up("lg")]: {
+        height: "43em",
+      },
+      backgroundRepeat: "no-repeat",
+    },
     largeImageFilm: {
       backgroundColor: `rgba(0, 0, 0, 0.5)`,
       position: "absolute",
       top: 0,
       left: 0,
       width: "100%",
-      height: "43em",
+      [theme.breakpoints.only("xs")]: {
+        height: "30em",
+      },
+      [theme.breakpoints.only("sm")]: {
+        height: "27em",
+      },
+      [theme.breakpoints.only("md")]: {
+        height: "36em",
+      },
+      [theme.breakpoints.up("lg")]: {
+        height: "43em",
+      },
     },
     outterContainerForWords: {
       position: "static",
@@ -45,12 +72,22 @@ export interface ISplashSection {}
 
 const SplashSection: React.FC<ISplashSection> = (props: ISplashSection) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const small = useMediaQuery(theme.breakpoints.down("sm"));
+  const justifycontent = small ? "center" : "flex-end";
   return (
     <Grid container>
       <Grid item xs={12} className={classes.largeImageBackground}>
         <Grid container className={classes.largeImageFilm}>
           <Grid item xs={12}>
-            <Grid container direction="column" justifyContent="flex-end" alignItems="center" spacing={2} className={classes.outterContainerForWords}>
+            <Grid
+              container
+              direction="column"
+              justifyContent={justifycontent}
+              alignItems="center"
+              spacing={2}
+              className={classes.outterContainerForWords}
+            >
               {" "}
               <Grid item xs={12} key="myname" className={classes.myName}>
                 Charlene Coffman

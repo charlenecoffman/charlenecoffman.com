@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createStyles, Grid, makeStyles, Theme, Typography, Slide } from "@material-ui/core";
+import { createStyles, Grid, makeStyles, Theme, Typography, Slide, useMediaQuery, useTheme } from "@material-ui/core";
 import { FaSpotify, FaUsers, FaBook } from "react-icons/fa";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -68,6 +68,14 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
   const [showSpotifyViewMore, setShowSpotifyViewMore] = useState(false);
   const [showMobProgViewMore, setShowMobProgViewMore] = useState(false);
   const [showLeadersViewMore, setShowLeadersViewMore] = useState(false);
+  const theme = useTheme();
+  const med = useMediaQuery(theme.breakpoints.only("md"));
+  const small = useMediaQuery(theme.breakpoints.only("sm"));
+  const xs = useMediaQuery(theme.breakpoints.only("xs"));
+  const eachsection = xs ? 12 : med || small ? 3 : 2;
+
+  const alwaysShowViewMores = xs || med || small ? true : false;
+
   return (
     <Grid container className={classes.OuterContainer}>
       <Grid item xs={12} key="title">
@@ -80,7 +88,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
         <Grid container justifyContent="center" alignItems="center" spacing={2}>
           <Grid
             item
-            xs={2}
+            xs={eachsection}
             key="spotify"
             className={classes.OuterOfEachSection}
             onMouseEnter={() => setShowSpotifyViewMore(true)}
@@ -101,7 +109,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                 </Grid>
               </Grid>
               <Grid item xs={12} key="spotify_readmore" className={classes.ViewMoreContainer}>
-                <Slide direction="up" in={showSpotifyViewMore}>
+                <Slide direction="up" in={showSpotifyViewMore || alwaysShowViewMores}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
               </Grid>
@@ -109,7 +117,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
           </Grid>
           <Grid
             item
-            xs={2}
+            xs={eachsection}
             key="mobprog"
             className={classes.OuterOfEachSection}
             onMouseEnter={() => setShowMobProgViewMore(true)}
@@ -131,7 +139,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                 </Grid>
               </Grid>
               <Grid item xs={12} key="mobprog_readmore" className={classes.ViewMoreContainer}>
-                <Slide direction="up" in={showMobProgViewMore}>
+                <Slide direction="up" in={showMobProgViewMore || alwaysShowViewMores}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
               </Grid>
@@ -139,7 +147,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
           </Grid>
           <Grid
             item
-            xs={2}
+            xs={eachsection}
             key="leaders"
             className={classes.OuterOfEachSection}
             onMouseEnter={() => setShowLeadersViewMore(true)}
@@ -160,7 +168,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                 </Grid>
               </Grid>
               <Grid item xs={12} key="leaders_readmore" className={classes.ViewMoreContainer}>
-                <Slide direction="up" in={showLeadersViewMore}>
+                <Slide direction="up" in={showLeadersViewMore || alwaysShowViewMores}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
               </Grid>

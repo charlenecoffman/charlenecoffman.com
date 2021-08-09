@@ -43,20 +43,24 @@ const useStyles = makeStyles((theme: Theme) =>
     allLowerItemsContainer: {
       color: theme.palette.primary.main,
       paddingTop: "3em",
+      paddingLeft: "1em",
     },
     artImage: {
       backgroundImage: `url(${art})`,
-      backgroundSize: "100%",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
       height: "14em",
     },
     kidsImage: {
       backgroundImage: `url(${kids})`,
-      backgroundSize: "100%",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
       height: "18em",
     },
     weddingImage: {
       backgroundImage: `url(${wedding})`,
-      backgroundSize: "100%",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
       height: "14em",
     },
   }),
@@ -76,7 +80,7 @@ const OtherThingsILove: React.FC<IOtherThingsILove> = (props: IOtherThingsILove)
       </Grid>
       <Grid item xs={12} key="collection" className={classes.allLowerItemsContainer}>
         <Grid container justifyContent="center" alignItems="flex-start" spacing={2}>
-          <Grid item xs={2} key="art">
+          <Grid item sm={4} md={3} lg={2} xl={2} key="art">
             <Grid container>
               <Grid item xs={12} key="art_image" className={classes.artImage}></Grid>
               <Grid item xs={9} key="art_title" className={classes.SmallerTitleContainer}>
@@ -87,7 +91,7 @@ const OtherThingsILove: React.FC<IOtherThingsILove> = (props: IOtherThingsILove)
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={2} key="kids">
+          <Grid item sm={4} md={3} lg={2} xl={2} key="kids">
             <Grid container>
               <Grid item xs={12} key="kids_image" className={classes.kidsImage}></Grid>
               <Grid item xs={9} key="kids_title" className={classes.SmallerTitleContainer}>
@@ -100,7 +104,7 @@ const OtherThingsILove: React.FC<IOtherThingsILove> = (props: IOtherThingsILove)
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={2} key="husband">
+          <Grid item sm={4} md={3} lg={2} xl={2} key="husband">
             <Grid container>
               <Grid item xs={12} key="husband_image" className={classes.weddingImage}></Grid>
               <Grid item xs={9} key="husband_title" className={classes.SmallerTitleContainer}>

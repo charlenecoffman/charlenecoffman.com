@@ -22,10 +22,12 @@ const useStyles = makeStyles((theme: Theme) =>
     greyBackground: {
       backgroundColor: theme.palette.primary.dark,
       color: "#FFFFFF",
-      height: "35em",
     },
     headerContainer: {
       paddingTop: "3em",
+      [theme.breakpoints.down("md")]: {
+        paddingBottom: "1em",
+      },
     },
     littleTitles: {
       fontSize: 19,
@@ -97,10 +99,9 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
           </Grid>
         </Grid>
       </Grid>
-
       <Grid item xs={12} key="collection">
         <Grid container justifyContent="center" alignItems="flex-start" spacing={2}>
-          <Grid item xs={2} key="contactinfo">
+          <Grid item sm={6} md={3} lg={2} key="contactinfo">
             <Grid container>
               <Grid item xs={12} className={classes.littleTitles}>
                 Contact Information
@@ -137,7 +138,7 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={2} key="sitereferences">
+          <Grid item sm={6} md={3} lg={2} key="sitereferences">
             <Grid container>
               <Grid item xs={12} className={classes.littleTitles}>
                 About This Website
@@ -161,7 +162,7 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={2} key="xkcd">
+          <Grid item sm={6} md={3} lg={2} key="xkcd">
             <Grid container>
               <Grid item xs={12} className={classes.littleTitles}>
                 XKCD Comic
@@ -171,7 +172,7 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={2} key="poem">
+          <Grid item sm={6} md={3} lg={2} key="poem">
             <Grid item xs={12} className={classes.littleTitles}>
               Daily Poem
             </Grid>
