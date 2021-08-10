@@ -11,7 +11,10 @@ import BottomSection from "./components/footer/BottomSection";
 import FizzBuzz from "./components/FizzBuzz";
 import Palindrome from "./components/Palindrome";
 import CountOccurances from "./components/CountOccurances";
+import Spotify from "./components/Spotify";
+import MobProg from "./components/MobProg";
 import Contact from "./components/Contact";
+import Leaders from "./components/Leaders";
 import ScrollTop from "./components/navbar/ScrollTop";
 import { FaArrowUp } from "react-icons/fa";
 
@@ -68,6 +71,15 @@ function App() {
               </RouteWithNavBar>
               <RouteWithNavBar path="/contact">
                 <Contact />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/spotify">
+                <Spotify />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/mob">
+                <MobProg />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/leaders">
+                <Leaders />
               </RouteWithNavBar>
             </Switch>
             <ScrollTop>

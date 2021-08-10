@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { createStyles, Grid, makeStyles, Theme, Typography, Slide, useMediaQuery, useTheme } from "@material-ui/core";
 import { FaSpotify, FaUsers, FaBook } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -65,6 +66,9 @@ export interface IInspiration {}
 
 const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
   const classes = useStyles();
+  const history = useHistory();
+  const routeOnClick = useCallback((path: string) => history.push("/" + path), [history]);
+
   const [showSpotifyViewMore, setShowSpotifyViewMore] = useState(false);
   const [showMobProgViewMore, setShowMobProgViewMore] = useState(false);
   const [showLeadersViewMore, setShowLeadersViewMore] = useState(false);
@@ -108,7 +112,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} key="spotify_readmore" className={classes.ViewMoreContainer}>
+              <Grid item xs={12} key="spotify_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("spotify")}>
                 <Slide direction="up" in={showSpotifyViewMore || alwaysShowViewMores}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
@@ -138,7 +142,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                   <Grid item xs={12} key="mobprog_readmore"></Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} key="mobprog_readmore" className={classes.ViewMoreContainer}>
+              <Grid item xs={12} key="mobprog_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("mob")}>
                 <Slide direction="up" in={showMobProgViewMore || alwaysShowViewMores}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
@@ -167,7 +171,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} key="leaders_readmore" className={classes.ViewMoreContainer}>
+              <Grid item xs={12} key="leaders_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("leaders")}>
                 <Slide direction="up" in={showLeadersViewMore || alwaysShowViewMores}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>

@@ -4,7 +4,6 @@ import { MenuItem, AppBar, Toolbar, Button, Grid, Grow, MenuList, Popper, Typogr
 import MobileMenu from "./MobileMenu";
 import MobileMenuItem from "./MobileMenuItem";
 import { Link } from "react-router-dom";
-import HideOnScroll from "./HideOnScroll";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
