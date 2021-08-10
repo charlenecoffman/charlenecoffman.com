@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { createStyles, Grid, makeStyles, Theme, Button, Typography, useTheme, useMediaQuery } from "@material-ui/core";
 import lilypadsandflowers from "../images/lilypadsandflowers.jpg";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -75,6 +76,8 @@ const SplashSection: React.FC<ISplashSection> = (props: ISplashSection) => {
   const theme = useTheme();
   const small = useMediaQuery(theme.breakpoints.down("sm"));
   const justifycontent = small ? "center" : "flex-end";
+  const history = useHistory();
+  const handleOnClick = useCallback(() => history.push("/contact"), [history]);
   return (
     <Grid container>
       <Grid item xs={12} className={classes.largeImageBackground}>
@@ -98,7 +101,7 @@ const SplashSection: React.FC<ISplashSection> = (props: ISplashSection) => {
               <Grid item xs={12} key="contactButton">
                 <Grid container className={classes.ContactButtonOutter}>
                   <Grid item>
-                    <Button variant="outlined" color="secondary" style={{ borderRadius: 0 }}>
+                    <Button variant="outlined" color="secondary" style={{ borderRadius: 0 }} onClick={handleOnClick}>
                       <Typography className={classes.ContactButtonInner}>Contact</Typography>
                     </Button>
                   </Grid>

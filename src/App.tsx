@@ -11,6 +11,7 @@ import BottomSection from "./components/footer/BottomSection";
 import FizzBuzz from "./components/FizzBuzz";
 import Palindrome from "./components/Palindrome";
 import CountOccurances from "./components/CountOccurances";
+import Contact from "./components/Contact";
 
 const theme = createTheme({
   palette: {
@@ -62,6 +63,9 @@ function App() {
               </RouteWithNavBar>
               <RouteWithNavBar path="/countoccur">
                 <CountOccurances />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/contact">
+                <Contact />
               </RouteWithNavBar>
             </Switch>
             <BottomSection />
