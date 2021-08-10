@@ -24,18 +24,29 @@ const SocialLinks: React.FC<ISocialLinks> = (props: ISocialLinks) => {
       <Grid item xl={12} className={classes.NavBarBackground}>
         <Grid container justifyContent="center" alignItems="center">
           <Grid item xl={6}>
-            <Grid container spacing={1}>
+            <Grid container spacing={2}>
               <Grid item>
-                <FaFacebookF />
+                <a href="https://www.facebook.com/coffmanCharlene" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
+                  <FaFacebookF />
+                </a>
               </Grid>
               <Grid item>
-                <FaPinterest />
+                <a href="https://www.pinterest.com/ilovegrove/" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
+                  <FaPinterest />
+                </a>
               </Grid>
               <Grid item>
-                <FaTwitter />
+                <a href="https://twitter.com/char_machine" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
+                  <FaTwitter />
+                </a>
               </Grid>
               <Grid item>
-                <FaLinkedinIn />
+                <a
+                  href="https://www.linkedin.com/in/charlene-coffman-22108994/"
+                  style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+                >
+                  <FaLinkedinIn />
+                </a>
               </Grid>
             </Grid>
           </Grid>

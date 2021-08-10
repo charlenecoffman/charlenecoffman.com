@@ -1,5 +1,5 @@
 import "./App.css";
-import { createTheme, Grid, ThemeProvider } from "@material-ui/core";
+import { createTheme, Grid, ThemeProvider, Fab } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import MainNavBar from "./components/navbar/MainNavBar";
@@ -12,6 +12,8 @@ import FizzBuzz from "./components/FizzBuzz";
 import Palindrome from "./components/Palindrome";
 import CountOccurances from "./components/CountOccurances";
 import Contact from "./components/Contact";
+import ScrollTop from "./components/navbar/ScrollTop";
+import { FaArrowUp } from "react-icons/fa";
 
 const theme = createTheme({
   palette: {
@@ -68,6 +70,11 @@ function App() {
                 <Contact />
               </RouteWithNavBar>
             </Switch>
+            <ScrollTop>
+              <Fab color="secondary" size="small" aria-label="scroll back to top">
+                <FaArrowUp />
+              </Fab>
+            </ScrollTop>
             <BottomSection />
           </ThemeProvider>
         </Router>

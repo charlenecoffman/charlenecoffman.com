@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
       background: "transparent",
       boxShadow: "none",
       textAlign: "center",
+      position: "absolute",
+      top: 20,
+      left: 0,
     },
     homeButton: {
       textAlign: "left",
@@ -112,79 +115,77 @@ export default function Navbar() {
   return (
     <Grid container>
       <Grid item>
-        <HideOnScroll>
-          <AppBar position="absolute" className={classes.appBarStyle}>
-            <Toolbar id="back-to-top-anchor" style={{ height: "6em" }}>
-              {isMobile && <MobileMenu className={classes.hideOnNotMobile} menuItems={menuItems} />}
-              {!isMobile && (
-                <Grid container alignItems="center" className={classes.hideOnMobile}>
-                  <Grid item xs={12}>
-                    <Grid container justifyContent="center" alignItems="center">
-                      {menuItems.map((menuItem) => {
-                        if (menuItem.homeButton) {
-                          return (
-                            <Grid item key={menuItem.name} className={getClass(menuItem.name)} xs={5}>
-                              <Grid container justifyContent="center" alignItems="center">
-                                <Grid item>
-                                  <Link to={menuItem.link ?? ""} className={classes.linkNoStyle}>
-                                    <Button className={classes.largeFont} color="inherit">
-                                      {menuItem.name}
-                                    </Button>
-                                  </Link>
-                                </Grid>
+        <AppBar className={classes.appBarStyle}>
+          <Toolbar id="back-to-top-anchor">
+            {isMobile && <MobileMenu className={classes.hideOnNotMobile} menuItems={menuItems} />}
+            {!isMobile && (
+              <Grid container alignItems="center" className={classes.hideOnMobile}>
+                <Grid item xs={12}>
+                  <Grid container justifyContent="center" alignItems="center">
+                    {menuItems.map((menuItem) => {
+                      if (menuItem.homeButton) {
+                        return (
+                          <Grid item key={menuItem.name} className={getClass(menuItem.name)} xs={5}>
+                            <Grid container justifyContent="center" alignItems="center">
+                              <Grid item>
+                                <Link to={menuItem.link ?? ""} className={classes.linkNoStyle}>
+                                  <Button className={classes.largeFont} color="inherit">
+                                    {menuItem.name}
+                                  </Button>
+                                </Link>
                               </Grid>
                             </Grid>
-                          );
-                        } else if (menuItem.hasSubMenu) {
-                          return (
-                            <Grid item key={menuItem.name} xs={1} onMouseLeave={handleClose} className={getClass(menuItem.name)}>
-                              <Grid item onMouseEnter={handleClick}>
-                                <Typography align="center" className={classes.smallFont + " " + classes.link}>
-                                  {menuItem.name}
-                                </Typography>
-                              </Grid>
-                              <Popper anchorEl={anchorEl} open={open} onMouseLeave={handleClose} role={undefined} transition disablePortal>
-                                {({ TransitionProps, placement }) => (
-                                  <Grow {...TransitionProps} style={{ transformOrigin: placement === "bottom" ? "center top" : "center bottom" }}>
-                                    <Grid container>
-                                      <Grid item className={classes.paper}>
-                                        <MenuList>
-                                          {menuItem.subMenu?.map((m) => {
-                                            return (
-                                              <Link to={m.link ?? ""} className={classes.linkNoStyle}>
-                                                <MenuItem onClick={handleClose} className={classes.subMenuOptions}>
-                                                  <Typography className={classes.subMenuItem}>{m.name}</Typography>
-                                                </MenuItem>
-                                              </Link>
-                                            );
-                                          })}
-                                        </MenuList>
-                                      </Grid>
+                          </Grid>
+                        );
+                      } else if (menuItem.hasSubMenu) {
+                        return (
+                          <Grid item key={menuItem.name} xs={1} onMouseLeave={handleClose} className={getClass(menuItem.name)}>
+                            <Grid item onMouseEnter={handleClick}>
+                              <Typography align="center" className={classes.smallFont + " " + classes.link}>
+                                {menuItem.name}
+                              </Typography>
+                            </Grid>
+                            <Popper anchorEl={anchorEl} open={open} onMouseLeave={handleClose} role={undefined} transition disablePortal>
+                              {({ TransitionProps, placement }) => (
+                                <Grow {...TransitionProps} style={{ transformOrigin: placement === "bottom" ? "center top" : "center bottom" }}>
+                                  <Grid container>
+                                    <Grid item className={classes.paper}>
+                                      <MenuList>
+                                        {menuItem.subMenu?.map((m) => {
+                                          return (
+                                            <Link to={m.link ?? ""} className={classes.linkNoStyle}>
+                                              <MenuItem onClick={handleClose} className={classes.subMenuOptions}>
+                                                <Typography className={classes.subMenuItem}>{m.name}</Typography>
+                                              </MenuItem>
+                                            </Link>
+                                          );
+                                        })}
+                                      </MenuList>
                                     </Grid>
-                                  </Grow>
-                                )}
-                              </Popper>
-                            </Grid>
-                          );
-                        } else {
-                          return (
-                            <Grid item key={menuItem.name} className={getClass(menuItem.name)} xs={1}>
-                              <Link to={menuItem.link ?? ""} className={classes.linkNoStyle}>
-                                <Typography align="center" className={classes.smallFont}>
-                                  {menuItem.name}
-                                </Typography>
-                              </Link>
-                            </Grid>
-                          );
-                        }
-                      })}
-                    </Grid>
+                                  </Grid>
+                                </Grow>
+                              )}
+                            </Popper>
+                          </Grid>
+                        );
+                      } else {
+                        return (
+                          <Grid item key={menuItem.name} className={getClass(menuItem.name)} xs={1}>
+                            <Link to={menuItem.link ?? ""} className={classes.linkNoStyle}>
+                              <Typography align="center" className={classes.smallFont}>
+                                {menuItem.name}
+                              </Typography>
+                            </Link>
+                          </Grid>
+                        );
+                      }
+                    })}
                   </Grid>
                 </Grid>
-              )}
-            </Toolbar>
-          </AppBar>
-        </HideOnScroll>
+              </Grid>
+            )}
+          </Toolbar>
+        </AppBar>
       </Grid>
     </Grid>
   );

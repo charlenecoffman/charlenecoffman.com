@@ -25,20 +25,20 @@ const useStyles = makeStyles((theme: Theme) =>
     largeImageFilm: {
       backgroundColor: `rgba(0, 0, 0, 0.5)`,
       position: "absolute",
-      top: 0,
+      top: 20,
       left: 0,
       width: "100%",
       [theme.breakpoints.only("xs")]: {
-        height: "31.4em",
+        height: "30em",
       },
       [theme.breakpoints.only("sm")]: {
-        height: "28.4em",
+        height: "27em",
       },
       [theme.breakpoints.only("md")]: {
-        height: "37.4em",
+        height: "36em",
       },
       [theme.breakpoints.up("lg")]: {
-        height: "44.4em",
+        height: "43em",
       },
     },
     outterContainerForWords: {

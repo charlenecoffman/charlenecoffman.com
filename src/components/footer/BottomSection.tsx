@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme: Theme) =>
     greyBackground: {
       backgroundColor: theme.palette.primary.dark,
       color: "#FFFFFF",
+      [theme.breakpoints.down("md")]: {
+        paddingLeft: "1em",
+        paddingRight: "1em",
+      },
     },
     headerContainer: {
       paddingTop: "3em",
@@ -55,6 +59,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     comic: {
       maxWidth: "100%",
+    },
+    AfterIntro: {
+      paddingTop: "3em",
     },
   }),
 );
@@ -99,7 +106,7 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} key="collection">
+      <Grid item xs={12} className={classes.AfterIntro}>
         <Grid container justifyContent="center" alignItems="flex-start" spacing={2}>
           <Grid item sm={6} md={3} lg={2} key="contactinfo">
             <Grid container>
