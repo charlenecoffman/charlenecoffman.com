@@ -222,6 +222,16 @@ const Resume: React.FC<IResume> = (props: IResume) => {
                   "accessible by a select set of users). This website is hosted completely in AWS using DynamoDB, Lambda Functions, Cognito, API Gateway, Cloudfront, and Route53."
                 }
               />
+              <WorkHistory
+                title="Volunteer Teacher"
+                company="Microsoft TEALS"
+                startDate="August 2019"
+                endDate="March 2020"
+                description={
+                  "Technology Education and Literacy in Schools (TEALS) is a Microsoft Philanthropies program that builds sustainable CS programs in high schools. I taught the " +
+                  "TEALS curriculum to a classroom of mostly Juniors and Seniors. I also talked about the software development industry and how to get into it."
+                }
+              />
             </Grid>
           </Grid>
         </Grid>

@@ -89,7 +89,7 @@ export default function Navbar() {
   menuItems.push({ name: "Home", link: "/" } as MobileMenuItem);
   menuItems.push({ name: "Resume", link: "resume" } as MobileMenuItem);
   menuItems.push({ name: "Code Examples", subMenu: codeExamplesSubMenu, hasSubMenu: true } as MobileMenuItem);
-  menuItems.push({ name: "Blog", link: "blog" } as MobileMenuItem);
+  menuItems.push({ name: "Pet Projects", link: "projects" } as MobileMenuItem);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -146,7 +146,11 @@ export default function Navbar() {
                             </Grid>
                             <Popper anchorEl={anchorEl} open={open} onMouseLeave={handleClose} role={undefined} transition disablePortal>
                               {({ TransitionProps, placement }) => (
-                                <Grow {...TransitionProps} style={{ transformOrigin: placement === "bottom" ? "center top" : "center bottom" }}>
+                                <Grow
+                                  {...TransitionProps}
+                                  timeout={500}
+                                  style={{ transformOrigin: placement === "bottom" ? "center top" : "center bottom" }}
+                                >
                                   <Grid container>
                                     <Grid item className={classes.paper}>
                                       <MenuList>

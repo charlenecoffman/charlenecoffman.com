@@ -113,7 +113,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                 </Grid>
               </Grid>
               <Grid item xs={12} key="spotify_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("spotify")}>
-                <Slide direction="up" in={showSpotifyViewMore || alwaysShowViewMores}>
+                <Slide direction="up" in={showSpotifyViewMore || alwaysShowViewMores} timeout={400}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
               </Grid>
@@ -143,7 +143,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                 </Grid>
               </Grid>
               <Grid item xs={12} key="mobprog_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("mob")}>
-                <Slide direction="up" in={showMobProgViewMore || alwaysShowViewMores}>
+                <Slide direction="up" in={showMobProgViewMore || alwaysShowViewMores} timeout={400}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
               </Grid>
@@ -172,7 +172,7 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
                 </Grid>
               </Grid>
               <Grid item xs={12} key="leaders_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("leaders")}>
-                <Slide direction="up" in={showLeadersViewMore || alwaysShowViewMores}>
+                <Slide direction="up" in={showLeadersViewMore || alwaysShowViewMores} timeout={400}>
                   <Typography className={classes.ViewMoreButton}>View More</Typography>
                 </Slide>
               </Grid>

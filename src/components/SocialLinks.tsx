@@ -11,6 +11,31 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.dark,
       textAlign: "center",
     },
+    allLinks: {
+      "&:hover": {
+        transition: ".3s",
+      },
+    },
+    twitter: {
+      "&:hover": {
+        color: "#1DA1F2",
+      },
+    },
+    facebook: {
+      "&:hover": {
+        color: "#4267B2",
+      },
+    },
+    pinterest: {
+      "&:hover": {
+        color: "#E60023",
+      },
+    },
+    linkedin: {
+      "&:hover": {
+        color: "#0077b5",
+      },
+    },
   }),
 );
 
@@ -27,17 +52,17 @@ const SocialLinks: React.FC<ISocialLinks> = (props: ISocialLinks) => {
             <Grid container spacing={2}>
               <Grid item>
                 <a href="https://www.facebook.com/coffmanCharlene" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
-                  <FaFacebookF />
+                  <FaFacebookF className={[classes.allLinks, classes.facebook].join(" ")} />
                 </a>
               </Grid>
               <Grid item>
                 <a href="https://www.pinterest.com/ilovegrove/" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
-                  <FaPinterest />
+                  <FaPinterest className={[classes.allLinks, classes.pinterest].join(" ")} />
                 </a>
               </Grid>
               <Grid item>
                 <a href="https://twitter.com/char_machine" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
-                  <FaTwitter />
+                  <FaTwitter className={[classes.allLinks, classes.twitter].join(" ")} />
                 </a>
               </Grid>
               <Grid item>
@@ -45,7 +70,7 @@ const SocialLinks: React.FC<ISocialLinks> = (props: ISocialLinks) => {
                   href="https://www.linkedin.com/in/charlene-coffman-22108994/"
                   style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
                 >
-                  <FaLinkedinIn />
+                  <FaLinkedinIn className={[classes.allLinks, classes.linkedin].join(" ")} />
                 </a>
               </Grid>
             </Grid>

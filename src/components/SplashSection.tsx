@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { createStyles, Grid, makeStyles, Theme, Button, Typography, useTheme, useMediaQuery } from "@material-ui/core";
+import { createStyles, Grid, makeStyles, Theme, Button, Typography, useTheme, useMediaQuery, Fade } from "@material-ui/core";
 import lilypadsandflowers from "../images/lilypadsandflowers.jpg";
 import { useHistory } from "react-router-dom";
 
@@ -92,18 +92,24 @@ const SplashSection: React.FC<ISplashSection> = (props: ISplashSection) => {
               className={classes.outterContainerForWords}
             >
               {" "}
-              <Grid item xs={12} key="myname" className={classes.myName}>
-                Charlene Coffman
-              </Grid>
-              <Grid item xs={12} key="mytitle" className={classes.myTitle}>
-                a software engineer
-              </Grid>
+              <Fade in={true} timeout={1000}>
+                <Grid item xs={12} key="myname" className={classes.myName}>
+                  Charlene Coffman
+                </Grid>
+              </Fade>
+              <Fade in={true} timeout={1500}>
+                <Grid item xs={12} key="mytitle" className={classes.myTitle}>
+                  a software engineer
+                </Grid>
+              </Fade>
               <Grid item xs={12} key="contactButton">
                 <Grid container className={classes.ContactButtonOutter}>
                   <Grid item>
-                    <Button variant="outlined" color="secondary" style={{ borderRadius: 0 }} onClick={handleOnClick}>
-                      <Typography className={classes.ContactButtonInner}>Contact</Typography>
-                    </Button>
+                    <Fade in={true} timeout={2000}>
+                      <Button variant="outlined" color="secondary" style={{ borderRadius: 0 }} onClick={handleOnClick}>
+                        <Typography className={classes.ContactButtonInner}>Contact</Typography>
+                      </Button>
+                    </Fade>
                   </Grid>
                 </Grid>
               </Grid>
