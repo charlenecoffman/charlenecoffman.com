@@ -15,6 +15,7 @@ import Spotify from "./components/Spotify";
 import MobProg from "./components/MobProg";
 import Contact from "./components/Contact";
 import Leaders from "./components/Leaders";
+import PetProjects from "./components/PetProjects";
 import ScrollTop from "./components/navbar/ScrollTop";
 import { FaArrowUp } from "react-icons/fa";
 
@@ -80,6 +81,9 @@ function App() {
               </RouteWithNavBar>
               <RouteWithNavBar path="/leaders">
                 <Leaders />
+              </RouteWithNavBar>
+              <RouteWithNavBar path="/projects">
+                <PetProjects />
               </RouteWithNavBar>
             </Switch>
             <ScrollTop>
