@@ -1,4 +1,4 @@
-import { CircularProgress } from "material-ui";
+import { CircularProgress } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 
 export interface ILoading {
@@ -10,17 +10,23 @@ const Loading: React.FC<ILoading> = (props: ILoading) => {
   const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
-    var millisecondsToWait = props.fixedLoadTime;
-    setTimeout(function () {
-      setShowLoading(false);
-    }, millisecondsToWait);
+    if (props.fixedLoadTime) {
+      var millisecondsToWait = props.fixedLoadTime * 1000;
+      setTimeout(function () {
+        setShowLoading(false);
+      }, millisecondsToWait);
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
-      {showLoading && <CircularProgress />}
+      {showLoading && (
+        <div style={{ textAlign: "center", padding: "3em" }}>
+          <CircularProgress />
+        </div>
+      )}
       {!showLoading && <div>{props.children}</div>}
     </div>
   );

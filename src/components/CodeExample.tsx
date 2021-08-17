@@ -1,6 +1,7 @@
 import React from "react";
 import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import { BiCodeAlt } from "react-icons/bi";
+import Loading from "./Loading";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -51,7 +52,9 @@ const CodeExample: React.FC<ICodeExample> = (props: ICodeExample) => {
             {props.description}
           </Grid>
           <Grid item xs={12} xl={12}>
-            <iframe title={props.name} width="100%" height="475" src={props.iframeCodeUrl} frameBorder="0"></iframe>
+            <Loading fixedLoadTime={1}>
+              <iframe title={props.name} width="100%" height="475" src={props.iframeCodeUrl} frameBorder="0"></iframe>
+            </Loading>
           </Grid>
         </Grid>
       </Grid>
