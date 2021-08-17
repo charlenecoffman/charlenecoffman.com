@@ -4,6 +4,7 @@ import { SiPolymerproject } from "react-icons/si";
 import { GiBee } from "react-icons/gi";
 import { FaUserNinja } from "react-icons/fa";
 import btc from "../images/BTC.jpg";
+import budgeit from "../images/budgeit.jpg";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,23 +31,28 @@ const useStyles = makeStyles((theme: Theme) =>
         cursor: "pointer",
       },
     },
-    largeImage: {
+    largeBTCImage: {
       backgroundImage: `url(${btc})`,
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       height: "15em",
-      // [theme.breakpoints.only("xs")]: {
-      //   height: "30em",
-      // },
-      // [theme.breakpoints.only("sm")]: {
-      //   height: "27em",
-      // },
-      // [theme.breakpoints.only("md")]: {
-      //   height: "36em",
-      // },
-      // [theme.breakpoints.up("lg")]: {
-      //   height: "43em",
-      // },
+    },
+    largeBNImage: {
+      backgroundImage: `url(${budgeit})`,
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      height: "25em",
+    },
+    BeeIcon: {
+      fontSize: "2em",
+      color: "#FEC440",
+    },
+    NinjaIcon: {
+      fontSize: "2em",
+      color: "black",
+    },
+    Icon: {
+      fontSize: "2em",
     },
   }),
 );
@@ -92,13 +98,13 @@ const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
             <List>
               <ListItem onClick={showBTC} className={classes.Clickable}>
                 <ListItemIcon>
-                  <GiBee />
+                  <GiBee className={showBTCSection ? classes.BeeIcon : classes.Icon} />
                 </ListItemIcon>
                 <ListItemText primary="Be The Change Gulf Coast" secondary="https://bethechangegulfcoast.com" />
               </ListItem>
               <ListItem onClick={showBN} className={classes.Clickable}>
                 <ListItemIcon>
-                  <FaUserNinja />
+                  <FaUserNinja className={showBNSection ? classes.NinjaIcon : classes.Icon} />
                 </ListItemIcon>
                 <ListItemText primary="Budge-It Ninja" secondary="https://budge-it.ninja" />
               </ListItem>
@@ -111,15 +117,21 @@ const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
           {showBTCSection && (
             <Grid item xl={12}>
               <Grid container>
-                <Grid item xl={12} className={classes.largeImage}></Grid>
+                <Grid item xl={12} className={classes.largeBTCImage}></Grid>
                 <Grid item xl={12}>
-                  <a href="https://bethechangegulfcoast.com">Be The Change Gulf Coast</a> is a 503(c) Non-Profit that focuses on giving targeted
-                  assistance as needed and encourages small donations.
+                  <a href="https://bethechangegulfcoast.com" target="_blank" rel="noreferrer">
+                    Be The Change Gulf Coast
+                  </a>{" "}
+                  is a 503(c) Non-Profit that focuses on giving targeted assistance as needed and encourages small donations.
                 </Grid>
                 <Grid item xl={12} style={{ paddingTop: "1em" }}>
                   This website is hosted entirely in AWS. The domain and DNS configurations are in Route53. The website UI is a React app hosted using
                   static web-hosting in an S3 bucket. The API was creating using API Gateway and a collection of Lambda functions. All of the code is
-                  stored in GitHub and uses <a href="https://github.com/features/actions">GitHub Actions</a> for CI & CD.
+                  stored in GitHub and uses{" "}
+                  <a href="https://github.com/features/actions" target="_blank" rel="noreferrer">
+                    GitHub Actions
+                  </a>{" "}
+                  for CI & CD.
                 </Grid>
                 <Grid item xl={12} style={{ paddingTop: "1em" }}>
                   There is a test version of the site that is deployed when a branch other than master is pushed. I use this to test out new features.
@@ -130,7 +142,29 @@ const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
           )}
           {showBNSection && (
             <Grid item xl={12}>
-              Budget app
+              <Grid container>
+                <Grid item xl={4} className={classes.largeBNImage}></Grid>
+                <Grid item xl={8}>
+                  <Grid container>
+                    <Grid item xl={12}>
+                      <a href="https://bethechangegulfcoast.com" target="_blank" rel="noreferrer">
+                        Budge-It.Ninja
+                      </a>{" "}
+                      is the budget app I create for my husband and myself. Its just a place we can both log in and see our current balances and
+                      transactions.
+                    </Grid>
+                    <Grid item xl={12} style={{ paddingTop: "1em" }}>
+                      This website is hosted entirely in AWS. The domain and DNS configurations are in Route53. The website UI is a React app hosted
+                      using static web-hosting in an S3 bucket. The API was creating using API Gateway and a collection of Lambda functions. All of
+                      the code is stored in GitHub and uses{" "}
+                      <a href="https://github.com/features/actions" target="_blank" rel="noreferrer">
+                        GitHub Actions
+                      </a>{" "}
+                      for CI & CD.
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
             </Grid>
           )}
         </Grid>

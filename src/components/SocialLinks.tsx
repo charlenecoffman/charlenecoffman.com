@@ -51,23 +51,40 @@ const SocialLinks: React.FC<ISocialLinks> = (props: ISocialLinks) => {
           <Grid item xl={6}>
             <Grid container spacing={2}>
               <Grid item>
-                <a href="https://www.facebook.com/coffmanCharlene" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
+                <a
+                  href="https://www.facebook.com/coffmanCharlene"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+                >
                   <FaFacebookF className={[classes.allLinks, classes.facebook].join(" ")} />
                 </a>
               </Grid>
               <Grid item>
-                <a href="https://www.pinterest.com/ilovegrove/" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
+                <a
+                  href="https://www.pinterest.com/ilovegrove/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+                >
                   <FaPinterest className={[classes.allLinks, classes.pinterest].join(" ")} />
                 </a>
               </Grid>
               <Grid item>
-                <a href="https://twitter.com/char_machine" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
+                <a
+                  href="https://twitter.com/char_machine"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+                >
                   <FaTwitter className={[classes.allLinks, classes.twitter].join(" ")} />
                 </a>
               </Grid>
               <Grid item>
                 <a
                   href="https://www.linkedin.com/in/charlene-coffman-22108994/"
+                  target="_blank"
+                  rel="noreferrer"
                   style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
                 >
                   <FaLinkedinIn className={[classes.allLinks, classes.linkedin].join(" ")} />

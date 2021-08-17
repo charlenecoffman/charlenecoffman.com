@@ -69,7 +69,6 @@ const useStyles = makeStyles((theme: Theme) =>
 export interface IBottomSection {}
 
 const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
-  //https://poetrydb.org/linecount/10
   const classes = useStyles();
   const [lastModified, setLastModified] = useState("");
   const [comicUrl, setComicUrl] = useState("");
@@ -155,14 +154,14 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
               </Grid>
               <Grid item className={classes.siteMade}>
                 This site was made using{" "}
-                <a href="https://create-react-app.dev/" className={classes.link}>
+                <a href="https://create-react-app.dev/" target="_blank" rel="noreferrer" className={classes.link}>
                   Create React App
                 </a>
                 .
               </Grid>
               <Grid item xs={12}>
                 The source code for this site can be found on GitHub{" "}
-                <a href="https://github.com/charlenecoffman/charlenecoffman.com" className={classes.link}>
+                <a href="https://github.com/charlenecoffman/charlenecoffman.com" target="_blank" rel="noreferrer" className={classes.link}>
                   here
                 </a>
                 .

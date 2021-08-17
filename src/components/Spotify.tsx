@@ -90,8 +90,10 @@ const Spotify: React.FC<ISpotify> = (props: ISpotify) => {
                   </Grid>
                   <Grid item xl={12} className={classes.LastLine}>
                     I really can't do it justice, so just take some time, and watch both videos. Also follow this{" "}
-                    <a href="https://engineering.atspotify.com/2014/03/27/spotify-engineering-culture-part-1/">link</a> to read their article that
-                    goes with the videos.
+                    <a href="https://engineering.atspotify.com/2014/03/27/spotify-engineering-culture-part-1/" target="_blank" rel="noreferrer">
+                      link
+                    </a>{" "}
+                    to read their article that goes with the videos.
                   </Grid>
                 </Grid>
               </Grid>
