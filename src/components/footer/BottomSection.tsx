@@ -180,7 +180,7 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
           </Grid>
           <Grid item sm={6} md={3} lg={2} key="poem">
             <Grid item xs={12} className={classes.littleTitles}>
-              Daily Poem
+              Random Poem
             </Grid>
             {poem && poem.lines && <PoemContainer title={poem.title} author={poem.author} lines={poem.lines} />}
           </Grid>
