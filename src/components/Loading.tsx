@@ -27,7 +27,7 @@ const Loading: React.FC<ILoading> = (props: ILoading) => {
           <CircularProgress />
         </div>
       )}
-      {!showLoading && <div>{props.children}</div>}
+      <div style={{ display: `${showLoading ? "none" : "block"}` }}>{props.children}</div>
     </div>
   );
 };
