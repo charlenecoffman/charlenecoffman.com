@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     largeImageFilm: {
       backgroundColor: `rgba(0, 0, 0, 0.5)`,
       position: "absolute",
-      top: 20,
+      top: 25,
       left: 0,
       width: "100%",
       [theme.breakpoints.only("xs")]: {

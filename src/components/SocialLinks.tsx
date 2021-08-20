@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 16,
       backgroundColor: theme.palette.primary.dark,
       textAlign: "center",
+      paddingTop: ".25em",
     },
     allLinks: {
       "&:hover": {

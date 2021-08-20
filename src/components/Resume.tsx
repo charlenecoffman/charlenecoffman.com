@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
     Main: {
       fontFamily: ["Roboto", "sans-serif"].join(","),
       color: theme.palette.primary.main,
+      paddingBottom: "5em",
     },
     Photo: {
       backgroundImage: `url(${me})`,
@@ -192,6 +193,7 @@ const Resume: React.FC<IResume> = (props: IResume) => {
                   adding additional licenses for the API. I also assisted the company with establishing issues and requests tracking
                   system and software logging practices.
                   "
+                  bottomDivider={false}
                 />
               </Grid>
             </Grid>
@@ -201,7 +203,14 @@ const Resume: React.FC<IResume> = (props: IResume) => {
               <Grid item xs={12} className={classes.MainTitle}>
                 <MdSchool /> Education
               </Grid>
-              <WorkHistory title="" company="University of South Alabama" startDate="" endDate="May 2015" description="Computer Science, B.S." />
+              <WorkHistory
+                title=""
+                company="University of South Alabama"
+                startDate=""
+                endDate="May 2015"
+                description="Computer Science, B.S."
+                bottomDivider={false}
+              />
             </Grid>
           </Grid>
           <Grid item xs={12} key="philanthropy">
@@ -231,6 +240,7 @@ const Resume: React.FC<IResume> = (props: IResume) => {
                   "Technology Education and Literacy in Schools (TEALS) is a Microsoft Philanthropies program that builds sustainable CS programs in high schools. I taught the " +
                   "TEALS curriculum to a classroom of mostly Juniors and Seniors. I also talked about the software development industry and how to get into it."
                 }
+                bottomDivider={false}
               />
             </Grid>
           </Grid>

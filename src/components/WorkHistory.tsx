@@ -27,11 +27,12 @@ export interface IWorkHistory {
   startDate: string;
   endDate: string;
   description: string;
+  bottomDivider?: boolean;
 }
 
 const WorkHistory: React.FC<IWorkHistory> = (props: IWorkHistory) => {
   const classes = useStyles();
-
+  const bottomDivider = props.bottomDivider ?? true;
   return (
     <Grid container className={classes.FirstWorkExperience}>
       <Grid item xs={12}>
@@ -55,7 +56,7 @@ const WorkHistory: React.FC<IWorkHistory> = (props: IWorkHistory) => {
         {props.description}
       </Grid>
       <Grid item xs={12} className={classes.Divider}>
-        <Divider />
+        {bottomDivider && <Divider />}
       </Grid>
     </Grid>
   );
