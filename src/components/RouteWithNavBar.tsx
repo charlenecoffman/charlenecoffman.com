@@ -1,6 +1,7 @@
 import React from "react";
 import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import { Route } from "react-router-dom";
+import { useEffect } from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -24,6 +25,10 @@ export interface IRouteWithNavBar {
 
 const RouteWithNavBar: React.FC<IRouteWithNavBar> = (props: IRouteWithNavBar) => {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Route path={props.path}>
