@@ -95,7 +95,7 @@ const Resume: React.FC<IResume> = (props: IResume) => {
                     <MdEmail />
                   </Grid>
                   <Grid item xs={11}>
-                    me@charlenecoffman.com
+                    coffmancharlene@gmail.com
                   </Grid>
                 </Grid>
               </Grid>
