@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 export interface IPoemContainer {
   title: string;
@@ -23,6 +23,7 @@ const PoemContainer: React.FC<IPoemContainer> = (props: IPoemContainer) => {
       <Grid item xs={12}>
         By {props.author}
       </Grid>
+      <Grid style={{paddingTop:'1em'}}item xs={12}><Typography style={{fontSize: "1em"}}>Brought to you by <span style={{textDecoration:"underline", cursor:"pointer"}} onClick={() => window.location.href = "https://poetrydb.org/index.html"}>poetry db</span></Typography></Grid>
     </React.Fragment>
   );
 };

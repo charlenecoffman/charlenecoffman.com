@@ -143,10 +143,19 @@ const Resume: React.FC<IResume> = (props: IResume) => {
               </Grid>
               <Grid item xs={12}>
                 <WorkHistory
+                  title="Senior Software Engineer"
+                  company="Roofstock"
+                  startDate="January 2022"
+                  endDate="Present"
+                  description="At Roofstock I worked on the newly formed Roofstock onChain team to establish whatever technology was needed to support a brand new vertical at Roofstock. 
+                  My development team of 2-3 people worked closely with the marketing, legal, and security team to develop a few products that were used to support the purchase and sale 
+                  of homes as NFTs."
+                />
+                <WorkHistory
                   title="Software Engineer II"
                   company="EBSCO"
                   startDate="January 2019"
-                  endDate="Present"
+                  endDate="January 2022"
                   description="As a software engineer at EBSCO I am focusing mainly on full stack development of our customer facing flagship application EBSCONET. It is an
                   older application that has a multitude of responsibilities and it has been our focus to pull functionality into microservices that the site
                   could simply show on the page. At EBSCO I have enhanced my skills in JS (with React), .NET Core, and AWS."
