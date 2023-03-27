@@ -12,7 +12,6 @@ export default class EmailStore implements IEmailStore {
       email_address: email.email_address,
       message: email.message,
     };
-    console.log(emailToSend);
     emailjs.send("personalgmail", "template_gvz4yla", emailToSend, "user_3IabaTk3eBEeonKL6yOxh");
   }
 }
