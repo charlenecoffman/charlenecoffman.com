@@ -1,0 +1,670 @@
+.footer_Title {
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+}
+
+.mySubTitle {
+    text-align: center;
+}
+
+.greyBackground {
+    background-color: #26272b;
+    color: #FFFFFF;
+}
+
+.headerContainer {
+    padding-top: 3em;
+}
+
+.littleTitles {
+    font-size: 19px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+    border-bottom: 1px solid #19857b;
+}
+
+.littlerTitles {
+    font-size: 18px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+    padding-top: 2em;
+}
+
+.date { 
+    cursor: pointer;
+    color: #19857b;
+}
+
+.addressContainer {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.link {
+    color: #19857b;
+}
+
+.siteMade {
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+.comic {
+    max-width: 100%;
+}
+
+.AfterIntro {
+    padding-top: 3em;
+}
+
+.largeImageBackground {
+    background-image: url("../images/lilypadsandflowers.jpg");
+    background-size: cover;
+    background-repeat: no-repeat,
+}
+
+.largeImageFilm {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.outterContainerForWords {
+    position: static;
+    min-height: 28em;
+}
+
+.myName {
+    color: #FFFAFA;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-family: 'Uchen', serif;
+}
+
+.myTitle {
+    text-align: center;
+    color: #FFFAFA;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.myTitle_historySection {
+    text-align: left;
+    color: #FFFAFA;
+    text-transform: uppercase;
+    font-family: 'Uchen', serif;
+    font-size: 22px;
+}
+
+.ContactButtonOutter {
+    padding-top: 2em;
+}
+
+.ContactButtonInner {
+    color: #FFFAFA;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.linkNoStyle {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navBarButtons {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.homeButton {
+    text-align: left;
+}
+
+.otherButtons {
+    text-align: center;
+}
+
+.navBarButtons:hover {
+    color: #56AED4;
+}
+
+.smallFont {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.subMenuItem {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFAFA;
+}
+
+.paper {
+    background-color: rgba(0,0,0, 0.5);
+    text-transform: uppercase;
+}
+
+.subMenuOptions:hover {
+    background-color: #56AED4,
+}
+
+.Main {
+    color: #797979;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 6em;
+}
+
+.TitleSection {
+    text-align: center;
+}
+
+.TitleWords {
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+    font-size: 26;
+}
+
+.TitleIcon {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.longInputs {
+    width: 100%;
+}
+
+.sendButton {
+    text-align: right;
+    padding-top: 1em;
+}
+
+.textAreaContainer {
+    padding-top: 1em;
+    width: 100%;
+}
+
+.history_Title {
+    text-align: left;
+    font-size: 22px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+}
+
+.backgroundImage {
+    background-repeat: no-repeat,
+}
+
+.EachOutterContainer {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-size: 16px;
+    padding-top: 1em;
+}
+
+.Icons {
+    font-size: 2.5em;
+}
+
+.WordsWordsWords {
+    padding-left: 1em;
+}
+
+.myTitle_Subpages {
+    text-align: center;
+    color: #797979;
+    font-size: 22px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+}
+
+.SmallerTitles {
+    text-align: center;
+    color: #797979;
+    font-size: 18px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+}
+
+.SmallerTitleContainer {
+    padding-top: 1.5em;
+}
+
+.subTitle_Inspo {
+    text-align: center;
+    color: #797979;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.OuterContainer { 
+    padding-top: 2.25em;
+    padding-bottom: 2.25em;
+}
+
+.OuterOfEachSection {
+    text-align: center;
+}
+  
+.allLowerItemsContainer {
+    color: #797979;
+    padding-top: 3em;
+}
+
+.EachBox {
+    border: 1px solid transparent;
+}
+
+.EachBox:hover {
+    border: 1px solid #c4c4c4;
+    transition: 0.3s;
+}
+
+.IconContainer {
+    font-size: 4em;
+}
+
+.ViewMoreButton {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: #00CCCC;
+    color: #FFFAFA;
+}
+
+.ViewMoreContainer {
+    overflow: hidden;
+    padding-top: 1em;
+    border-bottom: 1px solid #00CCCC;
+}
+
+.ViewMoreContainer:hover {
+    cursor: pointer;
+}
+
+.SubHeaders {
+    color: #797979;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 6em;
+    padding-bottom: 3em;
+}
+
+.LeftPane {
+    text-align: center;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+.RightPane {
+    text-align: center;
+}
+
+.RightWords {
+    text-align: left;
+}
+
+.LastLine {
+    padding-top: 1em;
+};
+
+.Header {
+    padding-top: 2em;
+    text-align: left;
+}
+
+.OuterContainer_Love {
+    padding-top: 2.25em;
+    padding-bottom: 3.25em;
+    color: #797979;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.SmallerTitles_Love {
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+}
+
+.SmallerTitleContainer_Love {
+    padding-top: 1.5em;
+    text-align: center;
+}
+
+.subTitle_Love {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.subBelowTitle {
+    padding-top: 1.5em;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
+.allLowerItemsContainer_Love {
+    color: #797979;
+    padding-top: 3em;
+    padding-left: 1em;
+}
+
+.artImage {
+    background-image: url("../images/art.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 14em;
+}
+
+.kidsImage {
+    background-image: url("../images/kids.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 18em;
+}
+
+.weddingImage {
+    background-image: url("../images/wedding.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 14em;
+}
+
+.Main_Pet {
+    color: #797979;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 6em;
+}
+
+.Clickable:hover {
+    cursor: pointer;
+}
+
+.largeBTCImage {
+    background-image: url("../images/BTC.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 15em;
+}
+
+.largeBNImage {
+    background-image: url("../images/budgeit.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 25em;
+}
+
+.BeeIcon {
+    font-size: 2em;
+    color: #FEC440;
+}
+
+.NinjaIcon {
+    font-size: 2em;
+    color: black;
+}
+
+.Icon {
+    font-size: 2em;
+}
+
+.Main_Resume {
+    font-family: 'Roboto', sans-serif;
+    color: #797979;
+    padding-bottom: 5em;
+}
+
+.Photo {
+    background-image: url("../images/charlene.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 12em;
+    border-radius: 50px;
+}
+
+.ContactInfo {
+    padding: 1em;
+}
+
+.TopPadding {
+    padding-top: 2em;
+}
+
+.MainTitle {
+    font-size: 22px;
+    font-family: 'Uchen', serif;
+    text-transform: uppercase;
+}
+
+.FirstWorkExperience {
+    padding: 1em;
+}
+
+.Paragraph {
+    padding-top: 1em;
+}
+
+.EducationSection {
+    padding-top: 2em;
+}
+
+.SocialLinksBackground {
+    width: 100%;
+    color: #797979;
+    font-size: 20px;
+    background-color: #26272B;
+    text-align: center;
+    padding-top: .25em;
+    height: 2em;
+}
+
+.allLinks {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.allLinks:hover {
+    transition: color .3s;
+}
+
+.twitter:hover {
+    color: #1DA1F2;
+}
+
+.facebook:hover {
+    color: #4267B2;
+}
+
+.pinterest:hover {
+    color: #E60023;
+}
+
+.linkedin:hover {
+    color: #0077b5;
+}
+
+.Main_Spot {
+    color: #797979;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 6em;
+    padding-bottom: 3em;
+}
+
+
+ .quoteImage {
+    background-image: url( "../images/quote.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 14em;
+}
+
+.FirstPara {
+    padding-top: 1em;
+    padding-left: 1em;
+}
+
+.Main_History {
+    font-family: 'Roboto', sans-serif;
+    color: #797979;
+}
+
+.FirstWorkExperience {
+    padding: 1em;
+}
+
+.Divider {
+    padding-top: 1em;
+    color: #26272B;
+}
+
+.NavBarBackground {
+    background-color: #26272B;
+    width: 100%;
+}
+
+/* Responsive Section only */
+/* xs */
+@media only screen and (max-width: 600px) {
+    .largeImageBackgroundSize {
+        height: 30em;
+    }
+    .afterSend {
+        padding: 2em;
+    }
+    .MoveItDown {
+        padding-top: 2em;
+    }
+    .largeImageFilm {
+        height: 30em;
+    }
+}
+/* sm and down */
+@media only screen and (max-width: 900px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .main {
+        padding: 2em;
+    }
+    .NavBarBackground {
+        height: 3em;
+    }
+}
+/* sm and up */
+@media only screen and (min-width: 600px){
+    .historyBackgroundImage {
+        background-image: url("../images/mushrooms.jpg");
+        background-size: cover;
+    }
+}
+/* sm */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .largeImageBackgroundSize {
+        height: 27em;
+    }
+    .afterSend {
+        padding: 5em;
+    }
+    .historyBackgroundImage {
+        height: 27em;
+    }
+    .MoveItDown{
+        padding-top: 5em;
+    }
+    .largeImageFilm {
+        height: 27em;
+    }
+}
+/* md and down */
+@media only screen and (max-width: 1200px) {
+    .greyBackground {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .headerContainer {
+        padding-bottom: 1em;
+    }
+    .WordsSquare {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+/* md and up */
+@media only screen and (min-width: 900px) {
+    .hideOnMobile {
+        height: 1em;
+    }
+    .hideOnNotMobile {
+        display: none;
+    }
+    .main {
+        padding: 7em;
+    }
+    .MoveItDown{
+        padding-top: 10em;
+    }
+    .NavBarBackground {
+        height: 6em;
+    }
+}
+/* md */
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .largeImageBackgroundSize {
+        height: 36em;
+    }
+    .largeFont {
+        font-size: 18px;
+    }
+    .afterSend {
+        padding: 5em;
+    }
+    .historyBackgroundImage {
+        height: 45em;
+    }
+    .largeImageFilm {
+        height: 36em;
+    }
+}
+/* lg and up */
+@media only screen and (min-width: 1200px) {
+    .largeImageBackgroundSize {
+        height: 43em;
+    }
+    .largeFont {
+        font-size: 26px;
+    }
+    .afterSend {
+        padding: 15em;
+    }
+    .historyBackgroundImage {
+        height: 35em;
+    }
+    .WordsSquare {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    .largeImageFilm {
+        height: 43em;
+    }
+}
+/* lg and down */
+@media only screen and (max-width: 1536px) {
+
+}
+/* xl and up */
+@media only screen and (min-width: 1536px) {
+
+}

@@ -1,30 +1,7 @@
 import React from "react";
-import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import { BiCodeAlt } from "react-icons/bi";
 import Loading from "./Loading";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    Main: {
-      color: theme.palette.primary.main,
-      fontSize: 14,
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-      paddingTop: "6em",
-    },
-    TitleSection: {
-      textAlign: "center",
-    },
-    TitleWords: {
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-      fontSize: 26,
-    },
-    TitleIcon: {
-      fontWeight: "bold",
-      fontSize: 40,
-    },
-  }),
-);
 
 export interface ICodeExample {
   name: string;
@@ -33,15 +10,14 @@ export interface ICodeExample {
 }
 
 const CodeExample: React.FC<ICodeExample> = (props: ICodeExample) => {
-  const classes = useStyles();
   return (
-    <Grid container justifyContent="center" alignItems="flex-start" className={classes.Main}>
+    <Grid container justifyContent="center" alignItems="flex-start" className="Main">
       <Grid item xs={12} xl={2}>
-        <Grid container className={classes.TitleSection}>
-          <Grid item xl={12} className={classes.TitleIcon}>
+        <Grid container className="TitleSection">
+          <Grid item xl={12} className="TitleIcon">
             <BiCodeAlt />
           </Grid>
-          <Grid item xl={12} className={classes.TitleWords}>
+          <Grid item xl={12} className="TitleWords">
             {props.name}
           </Grid>
         </Grid>

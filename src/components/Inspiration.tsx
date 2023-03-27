@@ -1,74 +1,11 @@
-import React, { useCallback, useState } from "react";
-import { createStyles, Grid, makeStyles, Theme, Typography, Slide, useMediaQuery, useTheme } from "@material-ui/core";
+import React, { useState } from "react";
+import { Grid, Typography, Slide, useMediaQuery, useTheme } from "@mui/material";
 import { FaSpotify, FaUsers, FaBook } from "react-icons/fa";
-import { useHistory } from "react-router-dom";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    myTitle: {
-      textAlign: "center",
-      color: theme.palette.primary.main,
-      fontSize: 22,
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-    },
-    SmallerTitles: {
-      textAlign: "center",
-      color: theme.palette.primary.main,
-      fontSize: 18,
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-    },
-    SmallerTitleContainer: {
-      paddingTop: "1.5em",
-    },
-    subTitle: {
-      textAlign: "center",
-      color: theme.palette.primary.main,
-      fontSize: 14,
-      fontweight: 600,
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-    },
-    OuterContainer: { paddingTop: "2.25em", paddingBottom: "2.25em" },
-    OuterOfEachSection: {
-      textAlign: "center",
-    },
-    allLowerItemsContainer: {
-      color: theme.palette.primary.main,
-      paddingTop: "3em",
-    },
-    EachBox: {
-      "&:hover": {
-        border: `1px solid ${theme.palette.secondary.contrastText}`,
-        transition: "0.3s",
-      },
-      border: `1px solid transparent`,
-    },
-    IconContainer: {
-      fontSize: "4em",
-    },
-    ViewMoreButton: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-      fontSize: 14,
-      backgroundColor: theme.palette.secondary.dark,
-      color: "#FFFAFA",
-    },
-    ViewMoreContainer: {
-      overflow: "hidden",
-      paddingTop: "1em",
-      borderBottom: `1px solid ${theme.palette.secondary.dark}`,
-      "&:hover": { cursor: "pointer" },
-    },
-  }),
-);
+import { Link } from "react-router-dom";
 
 export interface IInspiration {}
 
 const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
-  const classes = useStyles();
-  const history = useHistory();
-  const routeOnClick = useCallback((path: string) => history.push("/" + path), [history]);
-
   const [showSpotifyViewMore, setShowSpotifyViewMore] = useState(false);
   const [showMobProgViewMore, setShowMobProgViewMore] = useState(false);
   const [showLeadersViewMore, setShowLeadersViewMore] = useState(false);
@@ -81,41 +18,43 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
   const alwaysShowViewMores = xs || med || small ? true : false;
 
   return (
-    <Grid container className={classes.OuterContainer}>
+    <Grid container className="OuterContainer">
       <Grid item xs={12} key="title">
-        <Typography className={classes.myTitle}>Inspiration</Typography>
+        <Typography className="myTitle_Subpages">Inspiration</Typography>
       </Grid>
       <Grid item xs={12} key="subtitle">
-        <Typography className={classes.subTitle}>A few things that inspire me as a software engineer</Typography>
+        <Typography className="subTitle_Inspo">A few things that inspire me as a software engineer</Typography>
       </Grid>
-      <Grid item xs={12} key="collection" className={classes.allLowerItemsContainer}>
+      <Grid item xs={12} key="collection" className="allLowerItemsContainer">
         <Grid container justifyContent="center" alignItems="center" spacing={2}>
           <Grid
             item
             xs={eachsection}
             key="spotify"
-            className={classes.OuterOfEachSection}
+            className="OuterOfEachSection"
             onMouseEnter={() => setShowSpotifyViewMore(true)}
             onMouseLeave={() => setShowSpotifyViewMore(false)}
           >
             <Grid container justifyContent="center" alignItems="center">
               <Grid item xs={12}>
-                <Grid container justifyContent="center" alignItems="center" className={classes.EachBox}>
-                  <Grid item xs={12} key="spotify_icon" className={classes.IconContainer}>
+                <Grid container justifyContent="center" alignItems="center" className="EachBox">
+                  <Grid item xs={12} key="spotify_icon" className="IconContainer">
                     <FaSpotify />
                   </Grid>
-                  <Grid item xs={9} key="spotify_title" className={classes.SmallerTitleContainer}>
-                    <Typography className={classes.SmallerTitles}>Spotify's Engineering Culture</Typography>
+                  <Grid item xs={9} key="spotify_title" className="SmallerTitleContainer">
+                    <Typography className="SmallerTitles">Spotify's Engineering Culture</Typography>
                   </Grid>
-                  <Grid item xs={9} key="spotify_subtitle" className={classes.SmallerTitleContainer}>
-                    <Typography className={classes.subTitle}>Spotify's focus on agile, autonomous teams...</Typography>
+                  <Grid item xs={9} key="spotify_subtitle" className="SmallerTitleContainer">
+                    <Typography className="subTitle">Spotify's focus on agile, autonomous teams...</Typography>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} key="spotify_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("spotify")}>
-                <Slide direction="up" in={showSpotifyViewMore || alwaysShowViewMores} timeout={400}>
-                  <Typography className={classes.ViewMoreButton}>View More</Typography>
-                </Slide>
+              <Grid item xs={12} key="spotify_readmore" className="ViewMoreContainer">
+                <Link to="/spotify" className="linkNoStyle">
+                  <Slide direction="up" in={showSpotifyViewMore || alwaysShowViewMores} timeout={400}>
+                    <Typography className="ViewMoreButton">View More</Typography>
+                  </Slide>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
@@ -123,29 +62,31 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
             item
             xs={eachsection}
             key="mobprog"
-            className={classes.OuterOfEachSection}
+            className="OuterOfEachSection"
             onMouseEnter={() => setShowMobProgViewMore(true)}
             onMouseLeave={() => setShowMobProgViewMore(false)}
           >
             <Grid container justifyContent="center" alignItems="center">
               <Grid item xs={12}>
-                <Grid container justifyContent="center" alignItems="center" className={classes.EachBox}>
-                  <Grid item xs={12} key="mobprog_icon" className={classes.IconContainer}>
+                <Grid container justifyContent="center" alignItems="center" className="EachBox">
+                  <Grid item xs={12} key="mobprog_icon" className="IconContainer">
                     <FaUsers />
                   </Grid>
-                  <Grid item xs={9} key="mobprog_title" className={classes.SmallerTitleContainer}>
-                    <Typography className={classes.SmallerTitles}>Woody Zuill's Mob Programming</Typography>
+                  <Grid item xs={9} key="mobprog_title" className="SmallerTitleContainer">
+                    <Typography className="SmallerTitles">Woody Zuill's Mob Programming</Typography>
                   </Grid>
-                  <Grid item xs={9} key="mobprog_subtitle" className={classes.SmallerTitleContainer}>
-                    <Typography className={classes.subTitle}>Woddy Zuill's address on mob programming...</Typography>
+                  <Grid item xs={9} key="mobprog_subtitle" className="SmallerTitleContainer">
+                    <Typography className="subTitle">Woddy Zuill's address on mob programming...</Typography>
                   </Grid>
                   <Grid item xs={12} key="mobprog_readmore"></Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} key="mobprog_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("mob")}>
-                <Slide direction="up" in={showMobProgViewMore || alwaysShowViewMores} timeout={400}>
-                  <Typography className={classes.ViewMoreButton}>View More</Typography>
-                </Slide>
+              <Grid item xs={12} key="mobprog_readmore" className="ViewMoreContainer">
+                <Link to="/mob" className="linkNoStyle">
+                  <Slide direction="up" in={showMobProgViewMore || alwaysShowViewMores} timeout={400}>
+                    <Typography className="ViewMoreButton">View More</Typography>
+                  </Slide>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
@@ -153,29 +94,31 @@ const Inspiration: React.FC<IInspiration> = (props: IInspiration) => {
             item
             xs={eachsection}
             key="leaders"
-            className={classes.OuterOfEachSection}
+            className="OuterOfEachSection"
             onMouseEnter={() => setShowLeadersViewMore(true)}
             onMouseLeave={() => setShowLeadersViewMore(false)}
           >
             <Grid container justifyContent="center" alignItems="center">
               <Grid item xs={12}>
-                <Grid container justifyContent="center" alignItems="center" className={classes.EachBox}>
-                  <Grid item xs={12} key="leaders_icon" className={classes.IconContainer}>
+                <Grid container justifyContent="center" alignItems="center" className="EachBox">
+                  <Grid item xs={12} key="leaders_icon" className="IconContainer">
                     <FaBook />
                   </Grid>
-                  <Grid item xs={9} key="leaders_title" className={classes.SmallerTitleContainer}>
-                    <Typography className={classes.SmallerTitles}>Following the Leaders</Typography>
+                  <Grid item xs={9} key="leaders_title" className="SmallerTitleContainer">
+                    <Typography className="SmallerTitles">Following the Leaders</Typography>
                   </Grid>
-                  <Grid item xs={9} key="leaders_subtitle" className={classes.SmallerTitleContainer}>
-                    <Typography className={classes.subTitle}>Learning from the leaders of the software engineering industry...</Typography>
+                  <Grid item xs={9} key="leaders_subtitle" className="SmallerTitleContainer">
+                    <Typography className="subTitle">Learning from the leaders of the software engineering industry...</Typography>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} key="leaders_readmore" className={classes.ViewMoreContainer} onClick={() => routeOnClick("leaders")}>
-                <Slide direction="up" in={showLeadersViewMore || alwaysShowViewMores} timeout={400}>
-                  <Typography className={classes.ViewMoreButton}>View More</Typography>
-                </Slide>
-              </Grid>
+              <Grid item xs={12} key="leaders_readmore" className="ViewMoreContainer">
+                <Link to="/leaders" className="linkNoStyle">
+                  <Slide direction="up" in={showLeadersViewMore || alwaysShowViewMores} timeout={400}>
+                    <Typography className="ViewMoreButton">View More</Typography>
+                  </Slide>
+                </Link>
+              </Grid>              
             </Grid>
           </Grid>
         </Grid>

@@ -1,19 +1,8 @@
 import React from "react";
-import { createStyles, IconButton, makeStyles, Theme, Typography, Grid } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+import { IconButton, Typography, Grid, MenuItem, Menu } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import MobileMenuItem from "./MobileMenuItem";
 import { Link } from "react-router-dom";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    linkNoStyle: {
-      textDecoration: "none",
-      color: "inherit",
-    },
-  }),
-);
 
 export interface IMobileMenuProps {
   className: string;
@@ -21,7 +10,6 @@ export interface IMobileMenuProps {
 }
 
 export const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
-  const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [submenuanchor, setsubmenuanchor] = React.useState<null | HTMLElement>(null);
 
@@ -58,7 +46,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
             if (!mi.hasSubMenu) {
               return (
                 <MenuItem onClick={handleClose} key={mi.name}>
-                  <Link to={mi.link!} className={classes.linkNoStyle}>
+                  <Link to={mi.link!} className="linkNoStyle">
                     {mi.name}
                   </Link>
                 </MenuItem>
@@ -82,7 +70,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
                           return (
                             <Grid item xs={12}>
                               <MenuItem onClick={handleClose} key={smi.name}>
-                                <Link to={smi.link!} className={classes.linkNoStyle}>
+                                <Link to={smi.link!} className="linkNoStyle">
                                   {smi.name}
                                 </Link>
                               </MenuItem>

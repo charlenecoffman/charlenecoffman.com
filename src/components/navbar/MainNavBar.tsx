@@ -1,81 +1,11 @@
 import React from "react";
-import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles";
-import { MenuItem, AppBar, Toolbar, Button, Grid, Grow, MenuList, Popper, Typography, useMediaQuery } from "@material-ui/core";
+import { useTheme } from "@mui/material";
+import { MenuItem, AppBar, Toolbar, Button, Grid, Grow, MenuList, Popper, Typography, useMediaQuery } from "@mui/material";
 import MobileMenu from "./MobileMenu";
 import MobileMenuItem from "./MobileMenuItem";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    linkNoStyle: {
-      textDecoration: "none",
-      color: "inherit",
-    },
-    link: {
-      cursor: "pointer",
-    },
-    hideOnMobile: {
-      [theme.breakpoints.down("sm")]: {
-        display: "none",
-      },
-      [theme.breakpoints.up("md")]: {
-        height: "1em",
-      },
-    },
-    hideOnNotMobile: {
-      [theme.breakpoints.up("md")]: {
-        display: "none",
-      },
-    },
-    appBarStyle: {
-      background: "transparent",
-      boxShadow: "none",
-      textAlign: "center",
-      position: "absolute",
-      top: 20,
-      left: 0,
-    },
-    homeButton: {
-      textAlign: "left",
-    },
-    buttons: {
-      textAlign: "center",
-      textTransform: "uppercase",
-      "&:hover": {
-        color: "#56AED4",
-      },
-    },
-    largeFont: {
-      [theme.breakpoints.up("md")]: {
-        fontSize: 18,
-      },
-      [theme.breakpoints.up("lg")]: {
-        fontSize: 26,
-      },
-    },
-    smallFont: {
-      fontSize: 14,
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-    },
-    subMenuItem: {
-      fontSize: 14,
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-      color: "#FFFAFA",
-    },
-    paper: {
-      backgroundColor: `rgba(0,0,0, 0.5)`,
-      textTransform: "uppercase",
-    },
-    subMenuOptions: {
-      "&:hover": {
-        backgroundColor: "#56AED4",
-      },
-    },
-  }),
-);
-
 export default function Navbar() {
-  const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -105,42 +35,38 @@ export default function Navbar() {
   const getClass = (name: string) => {
     switch (name) {
       case "Charlene Coffman":
-        return classes.homeButton;
+        return "homeButton";
       default:
-        return classes.buttons;
+        return "otherButtons";
     }
   };
 
   return (
     <Grid container>
       <Grid item>
-        <AppBar className={classes.appBarStyle}>
+        <AppBar>
           <Toolbar id="back-to-top-anchor">
-            {isMobile && <MobileMenu className={classes.hideOnNotMobile} menuItems={menuItems} />}
+            {isMobile && <MobileMenu className="hideOnNotMobile" menuItems={menuItems} />}
             {!isMobile && (
-              <Grid container alignItems="center" className={classes.hideOnMobile}>
+              <Grid container alignItems="center" className="hideOnMobile">
                 <Grid item xs={12}>
                   <Grid container justifyContent="center" alignItems="center">
                     {menuItems.map((menuItem) => {
                       if (menuItem.homeButton) {
                         return (
-                          <Grid item key={menuItem.name} className={getClass(menuItem.name)} xs={5}>
-                            <Grid container justifyContent="center" alignItems="center">
-                              <Grid item>
-                                <Link to={menuItem.link ?? ""} className={classes.linkNoStyle}>
-                                  <Button className={classes.largeFont} color="inherit">
-                                    {menuItem.name}
-                                  </Button>
-                                </Link>
-                              </Grid>
-                            </Grid>
+                          <Grid item key={menuItem.name} className={"navBarButtons largeFont " + getClass(menuItem.name)} xs={5}>
+                            <Link to={menuItem.link ?? ""} className="linkNoStyle">
+                              <Button className="largeFont" color="inherit">
+                                {menuItem.name}
+                              </Button>
+                            </Link>
                           </Grid>
                         );
                       } else if (menuItem.hasSubMenu) {
                         return (
-                          <Grid item key={menuItem.name} xs={1} onMouseLeave={handleClose} className={getClass(menuItem.name)}>
+                          <Grid item key={menuItem.name} xs={1} onMouseLeave={handleClose} className={"navBarButtons smallFont " + getClass(menuItem.name)}>
                             <Grid item onMouseEnter={handleClick}>
-                              <Typography align="center" className={classes.smallFont + " " + classes.link}>
+                              <Typography align="center" >
                                 {menuItem.name}
                               </Typography>
                             </Grid>
@@ -152,13 +78,13 @@ export default function Navbar() {
                                   style={{ transformOrigin: placement === "bottom" ? "center top" : "center bottom" }}
                                 >
                                   <Grid container>
-                                    <Grid item className={classes.paper}>
+                                    <Grid item className="paper">
                                       <MenuList>
                                         {menuItem.subMenu?.map((m) => {
                                           return (
-                                            <Link to={m.link ?? ""} className={classes.linkNoStyle}>
-                                              <MenuItem onClick={handleClose} className={classes.subMenuOptions}>
-                                                <Typography className={classes.subMenuItem}>{m.name}</Typography>
+                                            <Link to={m.link ?? ""} className="subMenuItem linkNoStyle">
+                                              <MenuItem onClick={handleClose} className="subMenuOptions">
+                                                <Typography>{m.name}</Typography>
                                               </MenuItem>
                                             </Link>
                                           );
@@ -173,9 +99,9 @@ export default function Navbar() {
                         );
                       } else {
                         return (
-                          <Grid item key={menuItem.name} className={getClass(menuItem.name)} xs={1}>
-                            <Link to={menuItem.link ?? ""} className={classes.linkNoStyle}>
-                              <Typography align="center" className={classes.smallFont}>
+                          <Grid item key={menuItem.name} className={"navBarButtons largeFont " + getClass(menuItem.name)} xs={1}>
+                            <Link to={menuItem.link ?? ""} className="linkNoStyle">
+                              <Typography align="center">
                                 {menuItem.name}
                               </Typography>
                             </Link>

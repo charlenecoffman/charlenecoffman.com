@@ -1,25 +1,6 @@
 import React from "react";
-import { createStyles, Grid, makeStyles, Theme, Divider } from "@material-ui/core";
+import { Grid, Divider } from "@mui/material";
 import { GoCalendar } from "react-icons/go";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    Main: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-      color: theme.palette.primary.main,
-    },
-    FirstWorkExperience: {
-      padding: "1em",
-    },
-    Paragraph: {
-      paddingTop: "1em",
-    },
-    Divider: {
-      paddingTop: "1em",
-      color: theme.palette.primary.dark,
-    },
-  }),
-);
 
 export interface IWorkHistory {
   title: string;
@@ -31,10 +12,9 @@ export interface IWorkHistory {
 }
 
 const WorkHistory: React.FC<IWorkHistory> = (props: IWorkHistory) => {
-  const classes = useStyles();
   const bottomDivider = props.bottomDivider ?? true;
   return (
-    <Grid container className={classes.FirstWorkExperience}>
+    <Grid container className="FirstWorkExperience">
       <Grid item xs={12}>
         {props.title !== "" && props.company !== "" && (
           <React.Fragment>
@@ -52,10 +32,10 @@ const WorkHistory: React.FC<IWorkHistory> = (props: IWorkHistory) => {
         )}
         {props.startDate === "" && props.endDate !== "" && <React.Fragment>{props.endDate}</React.Fragment>}
       </Grid>
-      <Grid item xs={12} className={classes.Paragraph}>
+      <Grid item xs={12} className="Paragraph">
         {props.description}
       </Grid>
-      <Grid item xs={12} className={classes.Divider}>
+      <Grid item xs={12} className="Divider">
         {bottomDivider && <Divider />}
       </Grid>
     </Grid>

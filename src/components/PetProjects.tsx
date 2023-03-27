@@ -1,67 +1,11 @@
 import React, { useState } from "react";
-import { createStyles, Grid, List, ListItem, ListItemIcon, ListItemText, makeStyles, Theme } from "@material-ui/core";
+import { Grid, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { SiPolymerproject } from "react-icons/si";
 import { GiBee } from "react-icons/gi";
 import { FaUserNinja } from "react-icons/fa";
-import btc from "../images/BTC.jpg";
-import budgeit from "../images/budgeit.jpg";
+import ComponentNavBarWrapper from "./ComponentNavBarWrapper";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    Main: {
-      color: theme.palette.primary.main,
-      fontSize: 14,
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-      paddingTop: "6em",
-    },
-    TitleSection: {
-      textAlign: "center",
-    },
-    TitleWords: {
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-      fontSize: 26,
-    },
-    TitleIcon: {
-      fontWeight: "bold",
-      fontSize: 40,
-    },
-    Clickable: {
-      "&:hover": {
-        cursor: "pointer",
-      },
-    },
-    largeBTCImage: {
-      backgroundImage: `url(${btc})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      height: "15em",
-    },
-    largeBNImage: {
-      backgroundImage: `url(${budgeit})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      height: "25em",
-    },
-    BeeIcon: {
-      fontSize: "2em",
-      color: "#FEC440",
-    },
-    NinjaIcon: {
-      fontSize: "2em",
-      color: "black",
-    },
-    Icon: {
-      fontSize: "2em",
-    },
-  }),
-);
-
-export interface IPetProjects {}
-
-const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
-  const classes = useStyles();
-
+const PetProjects: React.FC = () => {
   const [showBTCSection, setShowBTCSection] = useState(false);
   const [showBNSection, setShowBNSection] = useState(false);
 
@@ -85,26 +29,27 @@ const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
   };
 
   return (
-    <Grid container justifyContent="center" alignItems="flex-start" className={classes.Main}>
+    <ComponentNavBarWrapper>
+    <Grid container justifyContent="center" alignItems="flex-start" className="Main_Pet">
       <Grid item xs={12} xl={2}>
-        <Grid container className={classes.TitleSection}>
-          <Grid item xl={12} className={classes.TitleIcon}>
+        <Grid container className="TitleSection">
+          <Grid item xl={12} className="TitleIcon">
             <SiPolymerproject />
           </Grid>
-          <Grid item xl={12} className={classes.TitleWords}>
+          <Grid item xl={12} className="TitleWords">
             Pet Projects
           </Grid>
           <Grid item>
             <List>
-              <ListItem onClick={showBTC} className={classes.Clickable}>
+              <ListItem onClick={showBTC} className="Clickable">
                 <ListItemIcon>
-                  <GiBee className={showBTCSection ? classes.BeeIcon : classes.Icon} />
+                  <GiBee className={showBTCSection ? "BeeIcon" : "Icon"} />
                 </ListItemIcon>
                 <ListItemText primary="Be The Change Gulf Coast" secondary="https://bethechangegulfcoast.com" />
               </ListItem>
-              <ListItem onClick={showBN} className={classes.Clickable}>
+              <ListItem onClick={showBN} className="Clickable">
                 <ListItemIcon>
-                  <FaUserNinja className={showBNSection ? classes.NinjaIcon : classes.Icon} />
+                  <FaUserNinja className={showBNSection ? "NinjaIcon" : "Icon"} />
                 </ListItemIcon>
                 <ListItemText primary="Budge-It Ninja" secondary="https://budge-it.ninja" />
               </ListItem>
@@ -117,7 +62,7 @@ const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
           {showBTCSection && (
             <Grid item xl={12}>
               <Grid container>
-                <Grid item xl={12} className={classes.largeBTCImage}></Grid>
+                <Grid item xl={12} className="largeBTCImage"></Grid>
                 <Grid item xl={12}>
                   <a href="https://bethechangegulfcoast.com" target="_blank" rel="noreferrer">
                     Be The Change Gulf Coast
@@ -143,7 +88,7 @@ const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
           {showBNSection && (
             <Grid item xl={12}>
               <Grid container>
-                <Grid item xl={4} className={classes.largeBNImage}></Grid>
+                <Grid item xl={4} className="largeBNImage"></Grid>
                 <Grid item xl={8}>
                   <Grid container>
                     <Grid item xl={12}>
@@ -169,7 +114,7 @@ const PetProjects: React.FC<IPetProjects> = (props: IPetProjects) => {
           )}
         </Grid>
       </Grid>
-    </Grid>
+    </Grid></ComponentNavBarWrapper>
   );
 };
 

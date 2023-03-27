@@ -1,86 +1,46 @@
 import React from "react";
-import { createStyles, Grid, List, ListItem, ListItemProps, ListItemText, makeStyles, Theme } from "@material-ui/core";
+import { Grid, List, ListItem, ListItemProps, ListItemText } from "@mui/material";
 import { FaUsers } from "react-icons/fa";
 import { Timeline } from "react-twitter-widgets";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    Main: {
-      color: theme.palette.primary.main,
-      fontSize: 16,
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-      paddingTop: "6em",
-      paddingBottom: "3em",
-    },
-    LeftPane: {
-      textAlign: "center",
-      paddingRight: "2em",
-      paddingLeft: "2em",
-    },
-    RightPane: {
-      textAlign: "center",
-    },
-    TitleWords: {
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-      fontSize: 26,
-    },
-    TitleIcon: {
-      fontWeight: "bold",
-      fontSize: 40,
-    },
-    RightWords: {
-      textAlign: "left",
-    },
-    LastLine: {
-      paddingTop: "1em",
-    },
-    Header: {
-      paddingTop: "2em",
-      textAlign: "left",
-    },
-  }),
-);
+import ComponentNavBarWrapper from "./ComponentNavBarWrapper";
 
 function ListItemLink(props: ListItemProps<"a", { button?: true }>) {
   return <ListItem button component="a" {...props} />;
 }
 
-export interface ILeaders {}
-
-const Leaders: React.FC<ILeaders> = (props: ILeaders) => {
-  const classes = useStyles();
+const Leaders: React.FC = () => {
   return (
-    <Grid container justifyContent="center" alignItems="flex-start" className={classes.Main}>
+    <ComponentNavBarWrapper>
+    <Grid container justifyContent="center" alignItems="flex-start" className="SubHeaders">
       <Grid item xs={12} xl={2}>
-        <Grid container className={classes.LeftPane}>
-          <Grid item xl={12} className={classes.TitleIcon}>
+        <Grid container className="LeftPane">
+          <Grid item xl={12} className="TitleIcon">
             <FaUsers />
           </Grid>
-          <Grid item xl={12} className={classes.TitleWords}>
+          <Grid item xl={12} className="TitleWords">
             Learning From The Industry Leaders
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12} xl={5}>
-        <Grid container className={classes.RightPane}>
+        <Grid container className="RightPane">
           <Grid item xs={12} xl={12}>
-            <Grid container className={classes.RightWords}>
-              <Grid item xl={12} className={classes.LastLine}>
+            <Grid container className="RightWords">
+              <Grid item xl={12} className="LastLine">
                 A colleague of mine told me something extremely simple to understand and totally obvious once it was pointed out to me: Lets look at
-                how the leaders in our field have solved this problem, a do what they do.
+                how the leaders in our field have solved this problem, and do what they do.
               </Grid>
-              <Grid item xl={12} className={classes.LastLine}>
+              <Grid item xl={12} className="LastLine">
                 Its so simple, but so true. Teams of individuals at Google and Microsoft and StackOverflow have come across alot of these problems
                 before and if they have solved the problem in a way that works well, then why should I think that I will be able to spend less time
                 coming up with something even better.
               </Grid>
-              <Grid item xl={12} className={classes.LastLine}>
+              <Grid item xl={12} className="LastLine">
                 My attempt at keeping up with the industry also includes reading blogs of the greats and following them on twitter.
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xl={12} className={classes.Header}>
+          <Grid item xl={12} className="Header">
             Here is a list of blogs that I follow:
           </Grid>
           <Grid item xl={12}>
@@ -112,7 +72,7 @@ const Leaders: React.FC<ILeaders> = (props: ILeaders) => {
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Grid></ComponentNavBarWrapper>
   );
 };
 

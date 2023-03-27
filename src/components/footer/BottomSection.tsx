@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
+import {  Grid } from "@mui/material";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import LastModifiedDateStore from "../../stores/LastModifiedDateStore";
@@ -8,68 +8,7 @@ import PoemStore from "../../stores/PoemStore";
 import Poem from "../../models/Poem";
 import PoemContainer from "../PoemContainer";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    myTitle: {
-      textAlign: "center",
-      fontSize: 26,
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-    },
-    mySubTitle: {
-      textAlign: "center",
-    },
-    greyBackground: {
-      backgroundColor: theme.palette.primary.dark,
-      color: "#FFFFFF",
-      [theme.breakpoints.down("md")]: {
-        paddingLeft: "1em",
-        paddingRight: "1em",
-      },
-    },
-    headerContainer: {
-      paddingTop: "3em",
-      [theme.breakpoints.down("md")]: {
-        paddingBottom: "1em",
-      },
-    },
-    littleTitles: {
-      fontSize: 19,
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-      borderBottom: `1px solid ${theme.palette.secondary.contrastText}`,
-    },
-    littlerTitles: {
-      fontSize: 18,
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-      paddingTop: "2em",
-    },
-    date: { cursor: "pointer", color: theme.palette.secondary.dark },
-    addressContainer: {
-      paddingTop: "2em",
-      paddingBottom: "2em",
-    },
-    link: {
-      color: theme.palette.secondary.dark,
-    },
-    siteMade: {
-      paddingTop: "2em",
-      paddingBottom: "1em",
-    },
-    comic: {
-      maxWidth: "100%",
-    },
-    AfterIntro: {
-      paddingTop: "3em",
-    },
-  }),
-);
-
-export interface IBottomSection {}
-
-const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
-  const classes = useStyles();
+const BottomSection: React.FC = () => {
   const [lastModified, setLastModified] = useState("");
   const [comicUrl, setComicUrl] = useState("");
   const [poem, setPoem] = useState({} as Poem);
@@ -94,25 +33,25 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
   }, []);
 
   return (
-    <Grid container className={classes.greyBackground} justifyContent="center">
+    <Grid container className="greyBackground" justifyContent="center">
       <Grid item xs={12}>
-        <Grid container className={classes.headerContainer} justifyContent="center" alignItems="center">
-          <Grid item xs={12} key="myname" className={classes.myTitle}>
+        <Grid container className="headerContainer" justifyContent="center" alignItems="center">
+          <Grid item xs={12} key="myname" className="footer_Title">
             Charlene Coffman
           </Grid>
-          <Grid item xs={12} key="contactinvitation" className={classes.mySubTitle}>
+          <Grid item xs={12} key="contactinvitation" className="mySubTitle">
             I am available to discuss ideas on software or life or whatever…
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} className={classes.AfterIntro}>
+      <Grid item xs={12} className="AfterIntro">
         <Grid container justifyContent="center" alignItems="flex-start" spacing={2}>
           <Grid item sm={6} md={3} lg={2} key="contactinfo">
             <Grid container>
-              <Grid item xs={12} className={classes.littleTitles}>
+              <Grid item xs={12} className="littleTitles">
                 Contact Information
               </Grid>
-              <Grid item xs={12} className={classes.addressContainer}>
+              <Grid item xs={12} className="addressContainer">
                 <Grid container>
                   <Grid item xs={12}>
                     Alabaster, AL
@@ -146,22 +85,22 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
           </Grid>
           <Grid item sm={6} md={3} lg={2} key="sitereferences">
             <Grid container>
-              <Grid item xs={12} className={classes.littleTitles}>
+              <Grid item xs={12} className="littleTitles">
                 About This Website
               </Grid>
               <Grid item xs={12}>
                 Last Updated: {lastModified}
               </Grid>
-              <Grid item className={classes.siteMade}>
+              <Grid item className="siteMade">
                 This site was made using{" "}
-                <a href="https://create-react-app.dev/" target="_blank" rel="noreferrer" className={classes.link}>
+                <a href="https://create-react-app.dev/" target="_blank" rel="noreferrer" className="link">
                   Create React App
                 </a>
                 .
               </Grid>
               <Grid item xs={12}>
                 The source code for this site can be found on GitHub{" "}
-                <a href="https://github.com/charlenecoffman/charlenecoffman.com" target="_blank" rel="noreferrer" className={classes.link}>
+                <a href="https://github.com/charlenecoffman/charlenecoffman.com" target="_blank" rel="noreferrer" className="link">
                   here
                 </a>
                 .
@@ -170,16 +109,16 @@ const BottomSection: React.FC<IBottomSection> = (props: IBottomSection) => {
           </Grid>
           <Grid item sm={6} md={3} lg={2} key="xkcd">
             <Grid container>
-              <Grid item xs={12} className={classes.littleTitles}>
+              <Grid item xs={12} className="littleTitles">
                 XKCD Comic
               </Grid>
               <Grid item xs={12}>
-                {comicUrl !== "" && <img src={comicUrl} alt="new" className={classes.comic} />}
+                {comicUrl !== "" && <img src={comicUrl} alt="new" className="comic" />}
               </Grid>
             </Grid>
           </Grid>
           <Grid item sm={6} md={3} lg={2} key="poem">
-            <Grid item xs={12} className={classes.littleTitles}>
+            <Grid item xs={12} className="littleTitles">
               Random Poem
             </Grid>
             {poem && poem.lines && <PoemContainer title={poem.title} author={poem.author} lines={poem.lines} />}

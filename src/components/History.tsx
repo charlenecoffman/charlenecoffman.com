@@ -1,125 +1,68 @@
 import React from "react";
-import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
-import mushrooms from "../images/mushrooms.jpg";
+import { Grid } from "@mui/material";
 import { MdComputer } from "react-icons/md";
 import { BiCodeAlt } from "react-icons/bi";
 import { IoMdCalculator } from "react-icons/io";
 import { ImFileExcel } from "react-icons/im";
 import { GiGraduateCap } from "react-icons/gi";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    myTitle: {
-      textAlign: "left",
-      fontSize: 22,
-      fontFamily: "Uchen-Regular",
-      textTransform: "uppercase",
-    },
-    backgroundImage: {
-      [theme.breakpoints.up("sm")]: {
-        backgroundImage: `url(${mushrooms})`,
-        backgroundSize: "cover",
-      },
-      [theme.breakpoints.only("sm")]: {
-        height: "27em",
-      },
-      [theme.breakpoints.only("md")]: {
-        height: "45em",
-      },
-      [theme.breakpoints.up("lg")]: {
-        height: "35em",
-      },
-      backgroundRepeat: "no-repeat",
-    },
-    greyBackground: {
-      backgroundColor: theme.palette.primary.dark,
-      color: "#FFFFFF",
-    },
-    WordsSquare: {
-      [theme.breakpoints.down("md")]: {
-        paddingLeft: "1em",
-        paddingRight: "1em",
-      },
-      [theme.breakpoints.up("lg")]: {
-        paddingLeft: "3em",
-        paddingRight: "3em",
-      },
-    },
-    EachOutterContainer: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
-      textAlign: "left",
-      fontSize: 16,
-      paddingTop: "1em",
-    },
-    Icons: {
-      fontSize: "2.5em",
-    },
-    WordsWordsWords: {
-      paddingLeft: "1em",
-    },
-  }),
-);
-
-export interface IHistory {}
-
-const History: React.FC<IHistory> = (props: IHistory) => {
-  const classes = useStyles();
+const History: React.FC = () => {
   return (
-    <Grid container justifyContent="center" alignItems="center" className={classes.greyBackground}>
+    <Grid container justifyContent="center" alignItems="center" className="greyBackground">
       <Grid item xs={12} key="innerSection">
         <Grid container justifyContent="center" alignItems="center">
-          <Grid item xl={3} lg={4} md={5} sm={6} xs={12} key="treeimage" className={classes.backgroundImage}></Grid>
-          <Grid item xl={3} lg={4} md={5} sm={6} xs={12} className={classes.WordsSquare}>
+          <Grid item xl={3} lg={4} md={5} sm={6} xs={12} key="treeimage" className="backgroundImage historyBackgroundImage"></Grid>
+          <Grid item xl={3} lg={4} md={5} sm={6} xs={12} className="WordsSquare">
             <Grid container justifyContent="center" alignItems="center">
-              <Grid item xs={12} key="title" className={classes.myTitle}>
+              <Grid item xs={12} key="title" className="myTitle_historySection">
                 A History
               </Grid>
               <Grid item xs={12} key="computer">
-                <Grid container justifyContent="flex-start" alignItems="center" className={classes.EachOutterContainer}>
-                  <Grid item xs={1} className={classes.Icons}>
+                <Grid container justifyContent="flex-start" alignItems="center" className="EachOutterContainer">
+                  <Grid item xs={1} className="Icons">
                     <MdComputer />
                   </Grid>
-                  <Grid item xs={11} className={classes.WordsWordsWords}>
+                  <Grid item xs={11} className="WordsWordsWords">
                     My love for computers started at 11 years old, with teaching myself MS DOS on an old word processor
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12} key="html">
-                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className={classes.EachOutterContainer}>
-                  <Grid item xs={1} className={classes.Icons}>
+                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className="EachOutterContainer">
+                  <Grid item xs={1} className="Icons">
                     <BiCodeAlt />
                   </Grid>
-                  <Grid item xs={11} className={classes.WordsWordsWords}>
+                  <Grid item xs={11} className="WordsWordsWords">
                     My 6th grade PACE teacher showed me how to write my first HTML page
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12} key="calc">
-                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className={classes.EachOutterContainer}>
-                  <Grid item xs={1} className={classes.Icons}>
+                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className="EachOutterContainer">
+                  <Grid item xs={1} className="Icons">
                     <IoMdCalculator />
                   </Grid>
-                  <Grid item xs={11} className={classes.WordsWordsWords}>
+                  <Grid item xs={11} className="WordsWordsWords">
                     In 9th grade math we were given TI-93s and told that if we could program it to do our homework, then we could use it
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12} key="excel">
-                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className={classes.EachOutterContainer}>
-                  <Grid item xs={1} className={classes.Icons}>
+                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className="EachOutterContainer">
+                  <Grid item xs={1} className="Icons">
                     <ImFileExcel />
                   </Grid>
-                  <Grid item xs={11} className={classes.WordsWordsWords}>
+                  <Grid item xs={11} className="WordsWordsWords">
                     As an administrative assistant, I taught myself VB to write macros to do my tedious work for me
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12} key="college">
-                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className={classes.EachOutterContainer}>
-                  <Grid item xs={1} className={classes.Icons}>
+                <Grid container direction="row" justifyContent="flex-start" alignItems="center" className="EachOutterContainer">
+                  <Grid item xs={1} className="Icons">
                     <GiGraduateCap />
                   </Grid>
-                  <Grid item xs={11} className={classes.WordsWordsWords}>
+                  <Grid item xs={11} className="WordsWordsWords">
                     A friend convinced me to go back to school and get a degree in computer science, and the rest is history…
                   </Grid>
                 </Grid>
