@@ -32,7 +32,8 @@ jobs:
         run: |
           aws s3 rm \
             s3://charlenecoffman.com \
-            --recursive
+            --recursive \
+            --region us-east-1
       - name: S3 Deploys
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
