@@ -5,10 +5,10 @@ on:
       - main
 jobs:
   build-and-deployToLive:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [18.x]
     steps:
       - name: Checkout
         uses: actions/checkout@master
