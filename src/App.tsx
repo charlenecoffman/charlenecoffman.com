@@ -15,6 +15,7 @@ import MobProg from "./components/MobProg";
 import Contact from "./components/Contact";
 import Leaders from "./components/Leaders";
 import PetProjects from "./components/PetProjects";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import theme from './styles/theme';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Grid item xs={12}>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
+            <GoogleAnalytics />
             <SocialLinks />
             <MainNavBar />
               <Routes>
